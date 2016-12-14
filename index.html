@@ -4,10 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Androiddemo by a-qiang</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="javascripts/scale.fix.js"></script>
+    <title>Androiddemo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/github-dark.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -17,22 +16,30 @@
 <body>
     <div class="wrapper">
         <header class="without-description">
-            <h1>找回密码：</h1>
+            <h1>随叫随到：</h1>
         </header>
         <section>
-            <a href="tel:13526636962">呼叫奴婢!</a>
-            <a href="sms:13526636963">发短信!</a>
-            <a href="wtai://wp//mc;13526636963">呼叫奴婢 </a>
-            <a href="wtai://wp/ap;13526636963;">存储至电话簿 </a>
+                  
+            <a href="tel:13526636962" type="button" class="btn btn-default">呼叫奴婢</a>
+            <br>
+            <a href="sms:13526636963" type="button" class="btn btn-primary">发短信</a>
+            <br>
+            <a href="wtai://wp//mc;13526636963" type="button" class="btn btn-success">呼叫奴婢</a><br>
+            <a href="wtai://wp/ap;13526636963;" type="button" class="btn btn-info">存储至电话簿</a>
+            <br>
+         <!--    <a type="button" class="btn btn-warning">（警告）Warning</a>
+            <a type="button" class="btn btn-danger">（危险）Danger</a>
+            <a type="button" class="btn btn-link">（链接）Link</a> -->
+            
             <input name="phone_no" format="*m" value="13" />
-            <do type="option" label="呼出号">
+             <do type="option" label="呼出号">
                 <go href="wtai://wp/mc;$(phone_no)" />
             </do>
             <br/>
         </section>
     </div>
     <footer>
-        <p>Project maintained by <a href="https://github.com/a-qiang">a-qiang</a></p>
+        <p>Project maintained by <a href="https://github.com/a-qiang">qiang</a></p>
         <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
     </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
