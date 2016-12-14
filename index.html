@@ -25,10 +25,18 @@
             <hr>
             <a href="sms:13526636963" type="button" class="btn btn-primary">发短信</a>
             <hr>
+            <a href="sms:13526636963?body=你好！" type="button" class="btn btn-primary">安卓带内容短信</a>
+            <hr>
+            <a href="sms:13526636963&body=你好！" type="button" class="btn btn-primary">苹果带内容短信</a>
+            <hr>
+            <a href="sms:13526636963;body=你好！" type="button" class="btn btn-primary">苹果带内容短信</a>
+            <hr>
+            <a href="mailto:897379293@qq.com" type="button" class="btn btn-danger">发送邮件<a>
+            <hr>
             <a href="wtai://wp//mc;13526636963" type="button" class="btn btn-success">呼叫奴婢</a>
             <hr>
-            <a href="wtai://wp/ap;13526636963;" type="button" class="btn btn-info">存储至电话簿</a>
-            <hr>
+            
+         
          <!--    <a type="button" class="btn btn-warning">（警告）Warning</a>
             <a type="button" class="btn btn-danger">（危险）Danger</a>
             <a type="button" class="btn btn-link">（链接）Link</a> -->
@@ -37,7 +45,11 @@
              <do type="option" label="呼出号">
                 <go href="wtai://wp/mc;$(phone_no)" />
             </do>
+            <a href="wtai://wp/ap;13526636963;" type="button" class="btn btn-info">存储至电话簿</a>
             <hr/>
+                <input type="file" accept="image/*" capture="camera">图片
+                <input type="file" accept="video/*" capture="camcorder">视频
+                <input type="file" accept="audio/*" capture="microphone">音频
         </section>
     </div>
     <footer>
