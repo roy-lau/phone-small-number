@@ -1,20 +1,20 @@
-fixScale = function(doc) {
-
-	var addEvent = 'addEventListener',
-	    type = 'gesturestart',
-	    qsa = 'querySelectorAll',
-	    scales = [1, 1],
-	    meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
-
-	function fix() {
-		meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
-		doc.removeEventListener(type, fix, true);
-	}
-
-	if ((meta = meta[meta.length - 1]) && addEvent in doc) {
-		fix();
-		scales = [.25, 1.6];
-		doc[addEvent](type, fix, true);
-	}
-
-};
+$(document).on("pagecreate", "#page1", function() {
+    $("#TelBtn").on("click", function() {
+        var tel = $('#iphone').val();
+        $("#TelBtn").attr("href", "tel:" + tel);
+    });
+});
+$(document).on("pagecreate", "#page2", function() {
+    $("#SmsBtn").on("click", function() {
+        var Stel = $('#SmsPhone').val();
+        var TextArea = $('textarea').val();
+        $("#SmsBtn").attr("href", "sms:" + Stel + "?body=" + TextArea);
+    });
+});
+$(document).on("pagecreate", "#page3", function() {
+   $('#UlTel').append("<li data-icon='info'>" + "<a href=''>" +
+        +"<h4></h4>" +
+        +"<small></small>" +
+        +"</a>" +
+        "</li>")
+});
