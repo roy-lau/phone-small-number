@@ -32,10 +32,13 @@ $(document).on("pagecreate", "#page3", function() {
         $('#UlTel').append("<li data-icon='info' class='ui-last-child'>" 
             + "<a href='tel:13526636962' class='ui-btn ui-btn-icon-right ui-icon-info'>" 
             + "<h4>" + obj[i].tel + "</h4>" 
-            + "<small>" + obj[i].date + "</small>" 
+            + "<span class='ui-li-count'>" + obj[i].date + "</span>" 
             + "</a>"
             + "</li>")
 
     }
+
+});
+$(document).on("pagecreate", "#page4", function() {
 
 });

@@ -83,7 +83,6 @@
         <div data-role="main">
             <div data-role="content">
                 <ul data-role="listview" data-filter="true" data-autodividers="true" id="UlTel" data-filter-placeholder="搜索号码 ...">
-
                 </ul>
             </div>
         </div>
@@ -134,11 +133,31 @@
             </table> -->
             <ul data-role="listview" data-inset="true">
                 <li data-icon=""><a href="#">本机号码 <small>1888888888888888</small></a></li>
-                <li data-icon=""><a href="#">重置密码</a></li>
-                <li data-icon=""><a href="#">推荐给朋友</a></li>
-                <li data-icon=""><a href="#">问题反馈</a></li>
+                <li data-icon=""><a href="#reset">重置密码</a></li>
+                <li data-icon="info"><a href="#">问题反馈</a></li>
+                <div data-role="collapsible">
+                    <h4>推荐给朋友</h4>
+                    <img src="img/QRcode.png">
+                </div>
             </ul>
             <a href="logn.html" class="ui-btn ui-corner-all" data-transition="slidedown">退出</a>
+        </div>
+    </div>
+    <div data-role="page" id="reset">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>重置密码</h3>
+        </div>
+        <div data-role="main">
+            <form method="post" action="demoform.asp">
+                <div data-role="fieldcontain">
+                    <label for="lname">旧密码：</label>
+                    <input type="text" name="lname" id="lname">
+                    <label for="fname">新密码：</label>
+                    <input type="text" name="fname" id="fname">
+                </div>
+                <input type="submit" data-inline="true" value="提交">
+            </form>
         </div>
     </div>
 </body>
