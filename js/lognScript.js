@@ -5,6 +5,5 @@ $(document).on("pagecreate", "#Pagelogn", function() {
 	});
 	$('input').on('blur',function(){
 	    $('#bottom').css({'position':'fixed'})
-
 	});
 });
