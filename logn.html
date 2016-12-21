@@ -29,33 +29,14 @@
 
 		<form method="post" action="">
 		    
-		        <label for="tel">真实号码：</label>
+		        <label for="name">姓名：</label>
 		        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-		        <input data-clear-btn="true" name="text" id="tel" value="" placeholder="请输入您的手机号" type="text">
-<fieldset data-role="controlgroup" data-type="horizontal">
+		        <input data-clear-btn="true" name="text" id="name" value="" placeholder="请输入您的姓名" type="text">
+		         <label for="tel">真实号码：</label>
+		        <input data-clear-btn="true" name="text" id="tel" value="" placeholder="请输入您的手机号" type="text"> 
+		         <label for="ID">身份证号：</label>
+		        <input data-clear-btn="true" name="text" id="ID" value="" placeholder="请输入您的身份证号" type="text">
 
-        <label for="male">短期</label>
-        <input type="radio" name="gender" id="male" value="male">
-        <label for="female">长期</label>
-        <input type="radio" name="gender" id="female" value="female"> 
-      </fieldset>
-
-      <fieldset data-role="fieldcontain">
-        <label for="day">选择天</label>
-        <select name="day" id="day">
-    <optgroup label="工作日">
-         <option value="mon">星期一</option>
-         <option value="tue">星期二</option>
-         <option value="wed">星期三</option>
-         <option value="thu">星期四</option>
-         <option value="fri">星期五</option>
-    </optgroup>
-    <optgroup label="周末">
-         <option value="sat">星期六</option>
-         <option value="sun">星期日</option>
-    </optgroup>
-        </select>
-      </fieldset>
 
 		    <input type="submit" value="绑定">
 		</form>
@@ -67,5 +48,6 @@
 </body>
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript" src="js/lognScript.js"></script>
 
 </html>
