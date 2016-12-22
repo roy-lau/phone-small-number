@@ -6,22 +6,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>WebApp</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
-    <link rel="stylesheet" type="text/css" href="css/AppStyle.less">
 </head>
-
+<style type="text/css">
+    div[data-role^="header"]{
+        background-color: #0E2142;
+        color: white;
+    }
+</style>
 <body>
+
     <div data-role="page" id="page1">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
-            <h3>拨号</h3>
+            <h3>拨 号</h3>
             <a href="#page4" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext" data-transition="flow">设置</a>
         </div>
         <div data-role="main">
             <div data-role="content">
-                <label for="search-control-group">请输入您要拨打的手机号！</label>
-                <div data-role="controlgroup" data-type="horizontal">
+                <label for="iphone">请输入您要拨打的手机号！</label> <br>
+                <div data-role="controlgroup">
                     <input id="iphone" data-wrapper-class="controlgroup-textinput ui-btn" type="tel">
-                    <a href="" type="button" class="ui-btn ui-icon-phone" id="TelBtn">拨号</a>
+                    <br>
+                    <a href="" type="button" class="ui-btn ui-icon-phone ui-btn-icon-left" id="TelBtn">拨号</a>
                 </div>
             </div>
         </div>
@@ -41,20 +47,21 @@
             </div>
         </footer>
     </div>
+
     <div data-role="page" id="page2">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
-            <h3>短信</h3>
+            <h3>短 信</h3>
             <a href="#page4" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext" data-transition="flow">设置</a>
         </div>
         <div data-role="main">
             <form method="post" action="demoform.asp">
-                <input type="text" name="fname" id="SmsPhone" placeholder="手机号……">
+                <input type="tel" name="fname" id="SmsPhone" placeholder="手机号……">
                 <div data-role="fieldcontain">
                     <label for="info">短信内容</label>
                     <textarea name="addinfo" id="info"></textarea>
                     <br>
-                    <a href="" class="ui-btn ui-corner-all" id="SmsBtn">发送短信</a>
+                    <a href="" class="ui-btn ui-icon-comment ui-btn-icon-left" id="SmsBtn">发送短信</a>
                 </div>
             </form>
         </div>
@@ -74,6 +81,7 @@
             </div>
         </footer>
     </div>
+
     <div data-role="page" id="page3">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
@@ -102,6 +110,7 @@
             </div>
         </footer>
     </div>
+
     <div data-role="page" id="page4">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
@@ -143,6 +152,7 @@
             <a href="logn.html" class="ui-btn ui-corner-all" data-transition="slidedown">退出</a>
         </div>
     </div>
+
     <div data-role="page" id="reset">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
@@ -160,6 +170,7 @@
             </form>
         </div>
     </div>
+
 </body>
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
