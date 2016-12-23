@@ -1,3 +1,10 @@
+$(document).on("pagecreate", "#Pagelogn", function() {
+    $("#logn").on("click", function() {
+        var name = $('#name').val();
+        var password = $('#password').val();
+    
+    });
+});
 $(document).on("pagecreate", "#page1", function() {
     $("#TelBtn").on("click", function() {
         var tel = $('#iphone').val();
