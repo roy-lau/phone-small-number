@@ -9,34 +9,19 @@
 </head>
 <style type="text/css">
 </style>
+
 <body>
- <div data-role="page" id="Pagelogn">
+    <div data-role="page" id="Pagelogn">
         <form class="ui-content">
             <img src="img/logn.png">
             <br>
             <input data-clear-btn="true" name="text" id="name" value="" placeholder="用户名" type="text">
             <input data-clear-btn="true" name="password" id="password" value="" autocomplete="off" placeholder="密码" type="password">
             <br>
-
             <a href="" data-transition="slideup" class="ui-btn ui-corner-all" style="background-color: #FDC403" id="logn">登陆</a>
             <span style="color: red;"></span>
         </form>
     </div>
-
-    <div data-role="page" id="bindingPage">
-        <form method="post" action="">
-                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-                <br>
-                <label for="name">姓名：</label>
-                <input data-clear-btn="true" name="text" id="name" value="" placeholder="请输入您的姓名" type="text">
-                <label for="tel">真实号码：</label>
-                <input data-clear-btn="true" name="text" id="tel" value="" placeholder="请输入您的手机号" type="text">
-                <label for="ID">身份证号：</label>
-                <input data-clear-btn="true" name="text" id="ID" value="" placeholder="请输入您的身份证号" type="text">
-                <input type="submit" value="绑定">
-        </form>
-    </div>
-
     <div data-role="page" id="page1">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
@@ -45,7 +30,8 @@
         </div>
         <div data-role="main">
             <div data-role="content">
-                <label for="iphone">请输入您要拨打的手机号！</label> <br>
+                <label for="iphone">请输入您要拨打的手机号！</label>
+                <br>
                 <div data-role="controlgroup">
                     <input id="iphone" data-wrapper-class="controlgroup-textinput ui-btn" type="tel">
                     <br>
@@ -69,7 +55,6 @@
             </div>
         </footer>
     </div>
-
     <div data-role="page" id="page2">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
@@ -103,7 +88,6 @@
             </div>
         </footer>
     </div>
-
     <div data-role="page" id="page3">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
@@ -112,7 +96,8 @@
         </div>
         <div data-role="main">
             <div data-role="content">
-                <ul data-role="listview" data-filter="true" id="UlTel" data-filter-placeholder="搜索号码 ..."><!--data-autodividers="true" -->
+                <ul data-role="listview" data-filter="true" id="UlTel" data-filter-placeholder="搜索号码 ...">
+                    <!--data-autodividers="true" -->
                 </ul>
             </div>
         </div>
@@ -132,39 +117,15 @@
             </div>
         </footer>
     </div>
-
     <div data-role="page" id="page4">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
             <h3>个人设置</h3>
         </div>
         <div data-role="main">
-            <!--  <table class="ui-responsive">
-                <td>
-                    <a class="ui-btn ui-corner-all" href="#">数据同步</a>
-                </td>
-                <td>
-                    <select name="switch" id="switch" data-role="slider">
-                        <option value="on">On</option>
-                        <option value="off">Off</option>
-                    </select>
-                </td>
-                </tr>
-                <tr data-icon="false">
-                    <td>
-                        <a class="ui-btn ui-corner-all" href="#">呼入结束自动弹屏</a>
-                    </td>
-                    <td>
-                        <select name="switch" id="switch" data-role="slider">
-                            <option value="on">On</option>
-                            <option value="off" selected>Off</option>
-                        </select>
-                    </td>
-                </tr>
-            </table> -->
             <ul data-role="listview" data-inset="true">
                 <li data-icon=""><a href="">本机号码 <span class='ui-li-count'>1888888888888888</span></a></li>
-                <li > <a href="#bindingPage" data-transition="flip" data-rel="dialog">绑定小号</a></li>
+                <li> <a href="#bindingPage" data-transition="flip" data-rel="dialog">绑定小号</a></li>
                 <li data-icon=""><a href="#reset">重置密码</a></li>
                 <li data-icon="info"><a href="#">问题反馈</a></li>
                 <div data-role="collapsible">
@@ -175,7 +136,34 @@
             <a href="#Pagelogn" class="ui-btn ui-corner-all" data-transition="slidedown">退出</a>
         </div>
     </div>
-
+    <div data-role="page" id="bindingPage">
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a class="ui-btn ui-btn-active" id="T1">AXYB</a>
+                </li>
+                <li>
+                    <a class="ui-btn" id="T2">AXB</a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="main">
+            <form method="post" action="">
+                <fieldset data-role="fieldcontain" id="axyb">
+                    <select name="axyb">
+                      <option value="">绑定AXYB</option>
+                    </select>
+                    <a href="#Pagelogn" class="ui-btn">绑定</a>
+                </fieldset>
+                <fieldset data-role="fieldcontain" id="axb">
+                    <select name="axb">
+                      <option value="">绑定AXB</option>
+                    </select>
+                    <a href="#Pagelogn" class="ui-btn">绑定</a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
     <div data-role="page" id="reset">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
@@ -193,7 +181,6 @@
             </form>
         </div>
     </div>
-
 </body>
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
