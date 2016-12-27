@@ -75,9 +75,9 @@ $(document).on("pageinit", "#bindingPage", function() {
     $("select[name='axb']>option:first").html("")
 
     $("#axyb>a").on("click", function() {
-        alert("传给后台的值________" + $("select[name='axyb']").find("option:selected").html())
+        $("select[name='axyb']").find("option:selected").html()
     })
     $("#axb>a").on("click", function() {
-        alert("传给后台的值________" + $("select[name='axb']").find("option:selected").html())
+       $("select[name='axb']").find("option:selected").html()
     })
 });
