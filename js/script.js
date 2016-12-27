@@ -2,6 +2,13 @@ $(document).on("pagecreate", "#Pagelogn", function() {
     $("#logn").on("click", function() {
         var name = $('#name').val();
         var password = $('#password').val();
+           if(name){
+            $("#logn").attr("href","#page1")
+            $("#logn").next().html("")
+           }else{
+              $("#logn").attr("href","")
+              $("#logn").next().html("用户名密码不匹配")
+           }
     
     });
 });
