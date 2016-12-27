@@ -2,13 +2,13 @@ $(document).on("pageinit", "#Pagelogn", function() {
     $("#logn").on("click", function() {
         var name = $('#name').val();
         var password = $('#password').val();
-        if (name) {
-            $("#logn").attr("href", "#page1")
-            $("#logn").next().html("")
-        } else {
-            $("#logn").attr("href", "")
-            $("#logn").next().html("用户名密码不匹配")
-        }
+        // if (name) {
+        //     $("#logn").attr("href", "#page1")
+        //     $("#logn").next().html("")
+        // } else {
+        //     $("#logn").attr("href", "")
+        //     $("#logn").next().html("用户名密码不匹配")
+        // }
 
     });
 });
@@ -71,15 +71,13 @@ $(document).on("pageinit", "#bindingPage", function() {
         $("select[name='axb']").append("<option value=''>" + userName[i].tel + userName[i].name + "</option>")
     }
 
-    $("option:first").html("")
+    $("select>option:first").html("")
     $("select[name='axb']>option:first").html("")
-    var axybTo = $("select[name='axyb']").find("option:selected").html();
-    var axbTo = $("select[name='axb']").find("option:selected").html();
 
     $("#axyb>a").on("click", function() {
-        alert("传给后台的值"________axybTo)
+        alert("传给后台的值________" + $("select[name='axyb']").find("option:selected").html())
     })
     $("#axb>a").on("click", function() {
-        alert("传给后台的值"________axbTo)
+        alert("传给后台的值________" + $("select[name='axb']").find("option:selected").html())
     })
 });
