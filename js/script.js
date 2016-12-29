@@ -2,35 +2,37 @@ $(document).on("pageinit", "#Pagelogn", function() {
     $("#logn").on("click", function() {
         var name = $('#name').val();
         var password = $('#password').val();
-        // if (name) {
-        //     $("#logn").attr("href", "#page1")
-        //     $("#logn").next().html("")
-        // } else {
-        //     $("#logn").attr("href", "")
-        //     $("#logn").next().html("用户名密码不匹配")
-        // }
-    });
-});
-$(document).on("pageinit", "#page1", function() {
-    $('#iphone').val("13526636962");
-    $("#TelBtn").on("click", function() {
-        
-        if (false) {
-            $("#TelBtn").attr("href", "tel:" + tel);
+        var blm = false
+        if (blm == false) {
+            $("#logn").attr("href", "#bindingPage")
+            $("#logn").next().html("")
+        } else if(name) {
+            $("#logn").attr("href", "#page1")
+            $("#logn").next().html("")
         } else {
-            $("#TelBtn").attr("href", "");
-            alert("请先点击右上角设置 绑定小号！")
+            $("#logn").attr("href", "")
+            $("#logn").next().html("用户名密码不匹配！")
         }
-        
     });
 });
-$(document).on("pageinit", "#page2", function() {
-    $("#SmsBtn").on("click", function() {
-        var Stel = $('#SmsPhone').val();
-        var TextArea = $('textarea').val();
-        $("#SmsBtn").attr("href", "sms:" + Stel + "?body=" + TextArea);
+$(function() {
+    var Xtel = 13526636962
+    $(document).on("pageinit", "#page1", function() {
+        $('#iphone').val(Xtel);
+        $("#TelBtn").on("click", function() {
+            $("#TelBtn").attr("href", "tel:" + tel);
+        });
+    });
+
+    $(document).on("pageinit", "#page2", function() {
+        var Stel = $('#SmsPhone').val(Xtel);
+        $("#SmsBtn").on("click", function() {
+            var TextArea = $('textarea').val();
+            $("#SmsBtn").attr("href", "sms:" + Stel + "?body=" + TextArea);
+        });
     });
 });
+
 $(document).on("pageinit", "#page3", function() {
     var obj = [
         { "tel": 135, "date": "2016-12-1" }, { "tel": 136, "date": 2016 - 12 - 2 }, { "tel": 138, "date": 2016 - 12 - 3 },
@@ -73,17 +75,17 @@ $(document).on("pageinit", "#bindingPage", function() {
         { "tel": 171, "name": "用户7" }, { "tel": 155, "name": "用户8" }, { "tel": 169, "name": "用户9" }
     ]
     for (var i = 0; i < userName.length; i++) {
-        $("select[name='axyb']").append("<option value=''>" + userName[i].tel + userName[i].name + "</option>")
-        $("select[name='axb']").append("<option value=''>" + userName[i].tel + userName[i].name + "</option>")
+        $("select[name='axyb']").append("<option value=" + userName[i].tel + " >" + userName[i].name + "</option>")
+        $("select[name='axb']").append("<option value=" + userName[i].tel + " >" + userName[i].tel + "</option>")
     }
 
     $("select>option:first").html("")
     $("select[name='axb']>option:first").html("")
 
     $("#axyb>a").on("click", function() {
-        $("select[name='axyb']").find("option:selected").html()
+        $("select[name='axyb']").find("option:selected").val()
     })
     $("#axb>a").on("click", function() {
-       $("select[name='axb']").find("option:selected").html()
+        $("select[name='axb']").find("option:selected").val()
     })
 });
