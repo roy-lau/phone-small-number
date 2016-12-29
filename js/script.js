@@ -9,13 +9,19 @@ $(document).on("pageinit", "#Pagelogn", function() {
         //     $("#logn").attr("href", "")
         //     $("#logn").next().html("用户名密码不匹配")
         // }
-
     });
 });
 $(document).on("pageinit", "#page1", function() {
+    $('#iphone').val("13526636962");
     $("#TelBtn").on("click", function() {
-        var tel = $('#iphone').val();
-        $("#TelBtn").attr("href", "tel:" + tel);
+        
+        if (false) {
+            $("#TelBtn").attr("href", "tel:" + tel);
+        } else {
+            $("#TelBtn").attr("href", "");
+            alert("请先点击右上角设置 绑定小号！")
+        }
+        
     });
 });
 $(document).on("pageinit", "#page2", function() {
