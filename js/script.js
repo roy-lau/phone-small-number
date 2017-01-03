@@ -1,7 +1,6 @@
 $(document).on("pageinit", "#Pagelogn", function() {
     $("#logn").on("click", function() {
-        var name = $('#name').val();
-        var password = $('#password').val();
+        var name = $('#name').sword').val();
         var blm = false
         if (blm == false) {
             $("#logn").attr("href", "#bindingPage")
@@ -23,7 +22,6 @@ $(function() {
             $("#TelBtn").attr("href", "tel:" + tel);
         });
     });
-
     $(document).on("pageinit", "#page2", function() {
         var Stel = $('#SmsPhone').val(Xtel);
         $("#SmsBtn").on("click", function() {
