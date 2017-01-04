@@ -15,18 +15,32 @@ $(document).on("pageinit", "#Pagelogn", function() {
     });
 });
 $(function() {
-    var Xtel = 13526636962
+      var number = [
+        {"tel": 13598412712},
+        {"tel": 13522222211},
+        {"tel": 13533333333},
+        {"tel": 17055555557},
+        {"tel": 13598412712},
+        {"tel": 17066666666},
+        {"tel": 17177777777},
+        {"tel": 17188888888},
+        {"tel": 17199999999}
+      ]
+    
+    for (var i = 0; i < number.length; i++) {
+        $("select[name='phone']").append("<option value=" + number[i].tel + " >" + number[i].tel + "</option>")
+        $("select[name='sms']").append("<option value=" + number[i].tel + " >" + number[i].tel + "</option>")
+    }
+    
     $(document).on("pageinit", "#page1", function() {
-        $('#iphone').val(Xtel);
         $("#TelBtn").on("click", function() {
-            $("#TelBtn").attr("href", "tel:" + tel);
+            $("#TelBtn").attr("href", "tel:" + $("select[name='phone']").find("option:selected").val());
         });
     });
     $(document).on("pageinit", "#page2", function() {
-        var Stel = $('#SmsPhone').val(Xtel);
         $("#SmsBtn").on("click", function() {
             var TextArea = $('textarea').val();
-            $("#SmsBtn").attr("href", "sms:" + Stel + "?body=" + TextArea);
+            $("#SmsBtn").attr("href", "sms:" + $("select[name='sms']").find("option:selected").val() + "?body=" + TextArea);
         });
     });
 });

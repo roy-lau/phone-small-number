@@ -30,13 +30,15 @@
         </div>
         <div data-role="main">
             <div data-role="content">
-                <label for="iphone">请输入您要拨打的手机号！</label>
-                <br>
-                <div data-role="controlgroup">
-                    <input id="iphone" data-wrapper-class="controlgroup-textinput ui-btn" type="tel" disabled="disabled">
-                    <br>
+              <form>
+                 <fieldset data-role="fieldcontain" id="iphone">
+                    <select name="phone">
+                        <option value="">请选择您要拨打的手机号！</option>
+                    </select>
+                    <br />
                     <a href="" type="button" class="ui-btn ui-icon-phone ui-btn-icon-left" id="TelBtn">拨号</a>
-                </div>
+                </fieldset> 
+              </form> 
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-fullscreen="true">
@@ -62,15 +64,17 @@
             <a href="#page4" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext" data-transition="flow">设置</a>
         </div>
         <div data-role="main">
-            <form method="post" action="demoform.asp">
-                <input type="tel" name="fname" id="SmsPhone" disabled="disabled">
-                <div data-role="fieldcontain">
+           <form>
+                   <fieldset data-role="fieldcontain" id="sms">
+                    <select name="sms">
+                        <option value="">请选择您要发送短信的手机号！</option>
+                    </select>
                     <label for="info">短信内容</label>
                     <textarea name="addinfo" id="info"></textarea>
-                    <br>
+                    <br />
                     <a href="" class="ui-btn ui-icon-comment ui-btn-icon-left" id="SmsBtn">发送短信</a>
-                </div>
-            </form>
+                </fieldset>
+           </form>
         </div>
         <footer data-role="footer" data-position="fixed" data-fullscreen="true">
             <div data-role="navbar">
