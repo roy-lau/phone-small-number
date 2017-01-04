@@ -17,7 +17,7 @@ $(document).on("pageinit", "#Pagelogn", function() {
 
 $(document).on("pageinit", "#page1", function() {
     var number = [
-        { "tel": 18001351358 },
+        { "tel": 13100501490 },
         { "tel": 13371698888 },
         { "tel": 18911919999 },
         { "tel": 13301111109 },
@@ -37,7 +37,7 @@ $(document).on("pageinit", "#page1", function() {
 });
 $(document).on("pageinit", "#page2", function() {
     var number = [
-        { "tel": 18001351358 },
+        { "tel": 13100501490 },
         { "tel": 13371698888 },
         { "tel": 18911919999 },
         { "tel": 13301111109 },
