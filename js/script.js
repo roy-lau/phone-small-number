@@ -1,6 +1,6 @@
 $(document).on("pageinit", "#Pagelogn", function() {
     $("#logn").on("click", function() {
-        var name = $('#name').sword').val();
+        var name = $('#name').val();
         var blm = false
         if (blm == false) {
             $("#logn").attr("href", "#bindingPage")
@@ -77,8 +77,8 @@ $(document).on("pageinit", "#bindingPage", function() {
         $("select[name='axb']").append("<option value=" + userName[i].tel + " >" + userName[i].tel + "</option>")
     }
 
-    $("select>option:first").html("")
-    $("select[name='axb']>option:first").html("")
+    // $("select>option:first").html("")
+    // $("select[name='axb']>option:first").html("")
 
     $("#axyb>a").on("click", function() {
         $("select[name='axyb']").find("option:selected").val()
