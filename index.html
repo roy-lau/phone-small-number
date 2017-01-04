@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>小号</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
+    <link rel="icon" href="img/title.jpg">
 </head>
 <script type="text/javascript">
 </script>
@@ -22,6 +23,43 @@
             <span style="color: red;"></span>
         </form>
     </div>
+      <div data-role="page" id="bindingPage">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>绑定小号</h3>
+        </div>
+        <br />
+        <div data-role="main" style="padding:0px 10px;">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a class="ui-btn ui-btn-active" id="T1">AXYB</a>
+                    </li>
+                    <li>
+                        <a class="ui-btn" id="T2">AXB</a>
+                    </li>
+                </ul>
+            </div>
+            <form method="post" action="">
+                <fieldset data-role="fieldcontain" id="axyb">
+                    <select name="axyb">
+                        <option value="">绑定AXYB</option>
+                    </select>
+                    <br />
+                    <a href="#page1" class="ui-btn">确认绑定</a>
+                    <a href="#" class="ui-btn" data-rel="back">取消</a>
+                </fieldset>
+                <fieldset data-role="fieldcontain" id="axb">
+                    <select name="axb">
+                        <option value="">绑定AXB</option>
+                    </select>
+                    <br />
+                    <a href="#page1" class="ui-btn">确认绑定</a>
+                    <a href="#" class="ui-btn" data-rel="back">取消</a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
     <div data-role="page" id="page1">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
@@ -30,15 +68,14 @@
         </div>
         <div data-role="main">
             <div data-role="content">
-                <form>
-                    <fieldset data-role="fieldcontain" id="iphone">
+            
+                    
                         <select name="phone">
                             <option value="">请选择您要拨打的手机号！</option>
                         </select>
                         <br />
                         <a href="" type="button" class="ui-btn ui-icon-phone ui-btn-icon-left" id="TelBtn">拨号</a>
-                    </fieldset>
-                </form>
+               
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-fullscreen="true">
@@ -64,8 +101,6 @@
             <a href="#page4" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext" data-transition="flow">设置</a>
         </div>
         <div data-role="main">
-            <form>
-                <fieldset data-role="fieldcontain" id="sms">
                     <select name="sms">
                         <option value="">请选择您要发送短信的手机号！</option>
                     </select>
@@ -73,8 +108,7 @@
                     <textarea name="addinfo" id="info"></textarea>
                     <br />
                     <a href="" class="ui-btn ui-icon-comment ui-btn-icon-left" id="SmsBtn">发送短信</a>
-                </fieldset>
-            </form>
+             
         </div>
         <footer data-role="footer" data-position="fixed" data-fullscreen="true">
             <div data-role="navbar">
@@ -140,50 +174,14 @@
             <a href="#Pagelogn" class="ui-btn ui-corner-all" data-transition="slidedown">退出</a>
         </div>
     </div>
-    <div data-role="page" id="bindingPage">
-        <div data-role="header">
-            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
-            <h3>绑定小号</h3>
-        </div>
-        <br />
-        <div data-role="main" style="padding:0px 10px;">
-            <div data-role="navbar">
-                <ul>
-                    <li>
-                        <a class="ui-btn ui-btn-active" id="T1">AXYB</a>
-                    </li>
-                    <li>
-                        <a class="ui-btn" id="T2">AXB</a>
-                    </li>
-                </ul>
-            </div>
-            <form method="post" action="">
-                <fieldset data-role="fieldcontain" id="axyb">
-                    <select name="axyb">
-                        <option value="">绑定AXYB</option>
-                    </select>
-                    <br />
-                    <a href="#page1" class="ui-btn">确认绑定</a>
-                    <a href="#" class="ui-btn" data-rel="back">取消</a>
-                </fieldset>
-                <fieldset data-role="fieldcontain" id="axb">
-                    <select name="axb">
-                        <option value="">绑定AXB</option>
-                    </select>
-                    <br />
-                    <a href="#page1" class="ui-btn">确认绑定</a>
-                    <a href="#" class="ui-btn" data-rel="back">取消</a>
-                </fieldset>
-            </form>
-        </div>
-    </div>
+  
     <div data-role="page" id="reset">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
             <h3>重置密码</h3>
         </div>
         <div data-role="main">
-            <form method="post" action="demoform.asp">
+            <form method="post" action="">
                 <div data-role="fieldcontain">
                     <label for="lname">旧密码：</label>
                     <input type="text" name="lname" id="lname">

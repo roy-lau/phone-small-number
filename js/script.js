@@ -14,7 +14,8 @@ $(document).on("pageinit", "#Pagelogn", function() {
         }
     });
 });
-$(function() {
+
+$(document).on("pageinit", "#page1", function() {
     var number = [
         { "tel": 18001351358 },
         { "tel": 13371698888 },
@@ -29,22 +30,33 @@ $(function() {
 
     for (var i = 0; i < number.length; i++) {
         $("select[name='phone']").append("<option value=" + number[i].tel + " >" + number[i].tel + "</option>")
+    }
+    $("#TelBtn").on("click", function() {
+        $("#TelBtn").attr("href", "tel:" + $("select[name='phone']").find("option:selected").val());
+    });
+});
+$(document).on("pageinit", "#page2", function() {
+    var number = [
+        { "tel": 18001351358 },
+        { "tel": 13371698888 },
+        { "tel": 18911919999 },
+        { "tel": 13301111109 },
+        { "tel": 18010125555 },
+        { "tel": 18911731688 },
+        { "tel": 13311119703 },
+        { "tel": 18911970588 },
+        { "tel": 18911731588 }
+    ]
+
+    for (var i = 0; i < number.length; i++) {
         $("select[name='sms']").append("<option value=" + number[i].tel + " >" + number[i].tel + "</option>")
     }
-
-    $(document).on("pageinit", "#page1", function() {
-        $("#TelBtn").on("click", function() {
-            $("#TelBtn").attr("href", "tel:" + $("select[name='phone']").find("option:selected").val());
-        });
+    $("#SmsBtn").on("click", function() {
+        var TextArea = $('textarea').val();
+        $("#SmsBtn").attr("href", "sms:" + $("select[name='sms']").find("option:selected").val() + "?body=" + TextArea);
     });
-    $(document).on("pageinit", "#page2", function() {
-        $("#SmsBtn").on("click", function() {
-            var TextArea = $('textarea').val();
-            $("#SmsBtn").attr("href", "sms:" + $("select[name='sms']").find("option:selected").val() + "?body=" + TextArea);
-        });
-    });
-
 });
+
 
 $(document).on("pageinit", "#page3", function() {
     var obj = [
