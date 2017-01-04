@@ -79,19 +79,10 @@ $(document).on("pageinit", "#bindingPage", function() {
         $("#axb").hide()
     })
     $("#T2").on("click", function() {
-            $("#axb").show()
-            $("#axyb").hide()
-        })
-        /*$.ajax({
-               type: "GET",
-               url: 'data/tel_date.json',
-               dataType: "json",
-               success: function(data) {
-                   var obj = JSON.parse(data)
-                   alert(data)
-                  
-               }
-           });*/
+        $("#axb").show()
+        $("#axyb").hide()
+    })
+
     var userName = [
         { "tel": 135, "name": "用户1" }, { "tel": 136, "name": "用户2" }, { "tel": 138, "name": "用户3" },
         { "tel": 170, "name": "用户4" }, { "tel": 188, "name": "用户5" }, { "tel": 166, "name": "用户6" },
@@ -111,4 +102,22 @@ $(document).on("pageinit", "#bindingPage", function() {
     $("#axb>a").on("click", function() {
         $("select[name='axb']").find("option:selected").val()
     })
+});
+$(document).on("pageinit", "#reset", function() {
+    $("#submit").on("click", function() {
+        var newPwd = $('#newPwd').val();
+        var oldPwd = $('#oldPwd').val();
+        if (newPwd == oldPwd) {
+            //在这里写发送的方法！
+            $('#submit').removeAttr('disabled');
+            $("#submit").attr("href", "#Pagelogn")
+            alert("密码修改成功！")
+        } else {
+            $('#submit').attr('disabled', 'disabled');
+             $("#submit").attr("href", "#")
+            alert("两次密码输入不一致！")
+        }
+
+    })
+
 });
