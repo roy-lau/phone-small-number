@@ -80,10 +80,20 @@ $(document).on("pageinit", "#bindingPage", function() {
     // $("select[name='axb']>option:first").html("")
 
     $("#axyb>a").on("click", function() {
-        $("select[name='axyb']").find("option:selected").val()
+        if ($("select[name='axyb']").find("option:selected").val() == '') {
+            alert('请选择您要绑定的小号')
+            $(this).attr("href", "")
+        } else {
+            $(this).attr("href", "#page1")
+        }
     })
     $("#axb>a").on("click", function() {
-        $("select[name='axb']").find("option:selected").val()
+        if ( $("select[name='axb']").find("option:selected").val() =='') {
+            alert('请选择您要绑定的小号')
+            $(this).attr("href", "")
+        } else {
+            $(this).attr("href", "#page1")
+        }
     })
 });
 
