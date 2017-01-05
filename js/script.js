@@ -49,8 +49,8 @@ $(document).on("pageinit", "#page3", function() {
 });
 $(document).on("pageinit", "#page4", function() {
     $("#Rbd").on("click", function() {
-        if(confirm("您确定解绑小号吗？")){
-                alert("解绑成功！")
+        if (confirm("您确定解绑小号吗？")) {
+            alert("解绑成功！")
         }
     });
 });
@@ -88,7 +88,7 @@ $(document).on("pageinit", "#bindingPage", function() {
         }
     })
     $("#axb>a").first().on("click", function() {
-        if ( $("select[name='axb']").find("option:selected").val() =='') {
+        if ($("select[name='axb']").find("option:selected").val() == '') {
             alert('请选择您要绑定的小号')
             $(this).attr("href", "")
         } else {

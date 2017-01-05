@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
     <link rel="icon" href="img/title.jpg">
 </head>
+
 <body>
     <div data-role="page" id="Pagelogn">
         <form class="ui-content">
@@ -174,13 +176,11 @@
             <form method="post" action="">
                 <div data-role="fieldcontain">
                     <label for="newPwd">新密码：</label>
-                    <input type="tel" name="newPwd" id="newPwd" required="required" maxlength="16"
-                            onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                    <input type="tel" name="newPwd" id="newPwd" required="required" maxlength="16" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                     <label for="oldPwd">确认密码：</label>
-                    <input type="password" name="oldPwd" id="oldPwd" required="required" maxlength="16"
-                            onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                    <input type="password" name="oldPwd" id="oldPwd" required="required" maxlength="16" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                 </div>
-                   <a href="#" id="submit" class="ui-btn ui-corner-all">确认修改</a>
+                <a href="#" id="submit" class="ui-btn ui-corner-all">确认修改</a>
             </form>
         </div>
     </div>
