@@ -16,18 +16,7 @@ $(document).on("pageinit", "#Pagelogn", function() {
 });
 
 $(document).on("pageinit", "#page1", function() {
-    var number = [
-        { "tel": 13100501490 },
-        { "tel": 13371698888 },
-        { "tel": 18911919999 },
-        { "tel": 13301111109 },
-        { "tel": 18010125555 },
-        { "tel": 18911731688 },
-        { "tel": 13311119703 },
-        { "tel": 18911970588 },
-        { "tel": 18911731588 }
-    ]
-
+    var number = [{ "tel": 13100501490 }, { "tel": 13371698888 }, { "tel": 18911919999 }, { "tel": 13301111109 }, { "tel": 18010125555 }, { "tel": 18911731688 }, { "tel": 13311119703 }, { "tel": 18911970588 }, { "tel": 18911731588 }]
     for (var i = 0; i < number.length; i++) {
         $("select[name='phone']").append("<option value=" + number[i].tel + " >" + number[i].tel + "</option>")
     }
@@ -36,17 +25,7 @@ $(document).on("pageinit", "#page1", function() {
     });
 });
 $(document).on("pageinit", "#page2", function() {
-    var number = [
-        { "tel": 13100501490 },
-        { "tel": 13371698888 },
-        { "tel": 18911919999 },
-        { "tel": 13301111109 },
-        { "tel": 18010125555 },
-        { "tel": 18911731688 },
-        { "tel": 13311119703 },
-        { "tel": 18911970588 },
-        { "tel": 18911731588 }
-    ]
+    var number = [{ "tel": 13100501490 }, { "tel": 13371698888 }, { "tel": 18911919999 }, { "tel": 13301111109 }, { "tel": 18010125555 }, { "tel": 18911731688 }, { "tel": 13311119703 }, { "tel": 18911970588 }, { "tel": 18911731588 }]
 
     for (var i = 0; i < number.length; i++) {
         $("select[name='sms']").append("<option value=" + number[i].tel + " >" + number[i].tel + "</option>")
@@ -69,7 +48,11 @@ $(document).on("pageinit", "#page3", function() {
     }
 });
 $(document).on("pageinit", "#page4", function() {
-
+    $("#Rbd").on("click", function() {
+        if(confirm("您确定解绑小号吗？")){
+                alert("解绑成功！")
+        }
+    });
 });
 $(document).on("pageinit", "#bindingPage", function() {
     $("fieldset").hide()
@@ -103,6 +86,7 @@ $(document).on("pageinit", "#bindingPage", function() {
         $("select[name='axb']").find("option:selected").val()
     })
 });
+
 $(document).on("pageinit", "#reset", function() {
     $("#submit").on("click", function() {
         var newPwd = $('#newPwd').val();
@@ -114,10 +98,9 @@ $(document).on("pageinit", "#reset", function() {
             alert("密码修改成功！")
         } else {
             $('#submit').attr('disabled', 'disabled');
-             $("#submit").attr("href", "#")
+            $("#submit").attr("href", "#")
             alert("两次密码输入不一致！")
         }
-
     })
 
 });
