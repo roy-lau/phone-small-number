@@ -79,7 +79,7 @@ $(document).on("pageinit", "#bindingPage", function() {
     // $("select>option:first").html("")
     // $("select[name='axb']>option:first").html("")
 
-    $("#axyb>a").on("click", function() {
+    $("#axyb>a").first().on("click", function() {
         if ($("select[name='axyb']").find("option:selected").val() == '') {
             alert('请选择您要绑定的小号')
             $(this).attr("href", "")
@@ -87,7 +87,7 @@ $(document).on("pageinit", "#bindingPage", function() {
             $(this).attr("href", "#page1")
         }
     })
-    $("#axb>a").on("click", function() {
+    $("#axb>a").first().on("click", function() {
         if ( $("select[name='axb']").find("option:selected").val() =='') {
             alert('请选择您要绑定的小号')
             $(this).attr("href", "")
