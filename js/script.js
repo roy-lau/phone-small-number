@@ -44,7 +44,10 @@ $(document).on("pageinit", "#page3", function() {
         { "tel": 171, "date": "2016-12-7" }, { "tel": 155, "date": "2016-12-8" }, { "tel": 169, "date": "2016 - 12 - 9" }
     ]
     for (var i = 0; i < obj.length; i++) {
-        $('#UlTel').append("<li data-icon='info' class='ui-last-child'>" + "<a href='tel:13526636962' class='ui-btn ui-btn-icon-right ui-icon-info'>" + "<h4>" + obj[i].tel + "</h4>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
+        $('#UlTel').append("<li data-icon='info' class='ui-last-child'>"
+            + "<a href='tel:"+obj[i].tel+"' class='ui-btn ui-btn-icon-right ui-icon-info'>"
+                + "<h4>" + obj[i].tel + "</h4>" 
+                + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
     }
 });
 $(document).on("pageinit", "#page4", function() {

@@ -859,7 +859,7 @@ label.ui-btn {
 .ui-btn-icon-bottom:after,
 .ui-btn-icon-notext:after {
 	background-color: 					#666 /*{global-icon-color}*/;
-	background-color: 					rgba(0,0,0,.3) /*{global-icon-disc}*/;
+	background-color: 					rgba(024,180,237,.3) /*{global-icon-disc}*/;
 	background-position: center center;
 	background-repeat: no-repeat;
 	-webkit-border-radius: 1em;
@@ -937,9 +937,9 @@ html .ui-alt-icon .ui-radio-off:after {
 html .ui-bar-a .ui-bar-inherit,
 html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit {
-	background-color: 			#e9e9e9 /*{a-bar-background-color}*/;
+	background-color: 			#12B7F5 /*{a-bar-background-color}*/;
 	border-color:	 		#ddd /*{a-bar-border}*/;
-	color: 					#333 /*{a-bar-color}*/;
+	color: 					white /*{a-bar-color}*/;
 	text-shadow: 0 /*{a-bar-shadow-x}*/ 1px /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ 	#eee /*{a-bar-shadow-color}*/;
 	font-weight: bold;
 }
