@@ -1,0 +1,85 @@
+    <div data-role="page" id="modelPage">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>模式选择</h3>
+        </div>
+        <br />
+        <div data-role="main" style="padding:0px 10px;">
+          <a href="#page1" class="ui-btn">axb模式登陆</a>
+          <br />
+          <br />
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a class="ui-btn ui-btn-active" id="T1">ax</a>
+                    </li>
+                    <li>
+                        <a class="ui-btn" id="T2">axyb</a>
+                    </li>
+                </ul>
+            </div>
+            <form method="post" action="">
+                <fieldset data-role="fieldcontain" id="ax">
+                    <select name="ax">
+                        <option value="">AXYB模式</option>
+                    </select>
+                    <br />
+                    <a href="" class="ui-btn">AXYB模式登陆</a>
+                    <a href="#" class="ui-btn" data-rel="back">取消</a>
+                </fieldset>
+                <fieldset data-role="fieldcontain" id="axyb">
+                    <select name="axyb">
+                        <option value="">AXB模式</option>
+                    </select>
+                    <br />
+                    <a href="" class="ui-btn">AXB模式登陆</a>
+                    <a class="ui-btn" data-rel="back">取消</a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+
+$(document).on("pageinit", "#modelPage", function() {
+    $("fieldset").hide()
+    $("#ax").show()
+    $("#T1").on("click", function() {
+        $("#ax").show()
+        $("#axyb").hide()
+    })
+    $("#T2").on("click", function() {
+        $("#axyb").show()
+        $("#ax").hide()
+    })
+
+    var userName = [
+        { "tel": 135, "name": "用户1" }, { "tel": 136, "name": "用户2" }, { "tel": 138, "name": "用户3" },
+        { "tel": 170, "name": "用户4" }, { "tel": 188, "name": "用户5" }, { "tel": 166, "name": "用户6" },
+        { "tel": 171, "name": "用户7" }, { "tel": 155, "name": "用户8" }, { "tel": 169, "name": "用户9" }
+    ]
+    for (var i = 0; i < userName.length; i++) {
+        $("select[name='ax']").append("<option value=" + userName[i].tel + " >" + userName[i].name + "</option>")
+        $("select[name='axyb']").append("<option value=" + userName[i].tel + " >" + userName[i].tel + "</option>")
+    }
+
+    // $("select>option:first").html("")
+    // $("select[name='axyb']>option:first").html("")
+
+    $("#ax>a").first().on("click", function() {
+        if ($("select[name='ax']").find("option:selected").val() == '') {
+            alert('请选择您要绑定的小号')
+            $(this).attr("href", "")
+        } else {
+            $(this).attr("href", "#page1")
+        }
+    })
+    $("#axyb>a").first().on("click", function() {
+        if ($("select[name='axyb']").find("option:selected").val() == '') {
+            alert('请选择您要绑定的小号')
+            $(this).attr("href", "")
+        } else {
+            $(this).attr("href", "#page1")
+        }
+    })
+});

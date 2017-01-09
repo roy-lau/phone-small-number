@@ -29,7 +29,7 @@
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
             <h3>拨 号</h3>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow">模式选择</a>
+        <!-- <a href="#" class="ui-btn ui-corner-all ui-shadow">模式选择</a> -->
         </div>
         <div data-role="main">
             <div data-role="content">
@@ -37,7 +37,8 @@
                     <option value="">请选择您要拨打的手机号！</option>
                 </select>
                 <br />
-                <a href="" type="button" class="ui-btn ui-icon-phone ui-btn-icon-left" id="TelBtn">拨号</a>
+                <a href="" type="button" class="ui-btn ui-icon-phone ui-btn-icon-left" 
+                 style="background-color: #FF9133;color: white;" id="TelBtn">拨号</a>
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-fullscreen="true">
@@ -160,46 +161,7 @@
             </div>
         </footer>
     </div>
-    <div data-role="page" id="modelPage">
-        <div data-role="header">
-            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
-            <h3>模式选择</h3>
-        </div>
-        <br />
-        <div data-role="main" style="padding:0px 10px;">
-          <a href="#page1" class="ui-btn">axb模式进入</a>
-          <br />
-          <br />
-            <div data-role="navbar">
-                <ul>
-                    <li>
-                        <a class="ui-btn ui-btn-active" id="T1">ax</a>
-                    </li>
-                    <li>
-                        <a class="ui-btn" id="T2">axyb</a>
-                    </li>
-                </ul>
-            </div>
-            <form method="post" action="">
-                <fieldset data-role="fieldcontain" id="ax">
-                    <select name="ax">
-                        <option value="">AXYB模式</option>
-                    </select>
-                    <br />
-                    <a href="" class="ui-btn">确定</a>
-                    <a href="#" class="ui-btn" data-rel="back">取消</a>
-                </fieldset>
-                <fieldset data-role="fieldcontain" id="axyb">
-                    <select name="axyb">
-                        <option value="">AXB模式</option>
-                    </select>
-                    <br />
-                    <a href="" class="ui-btn">确定</a>
-                    <a class="ui-btn" data-rel="back">取消</a>
-                </fieldset>
-            </form>
-        </div>
-    </div>
+
     <div data-role="page" id="reset">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>

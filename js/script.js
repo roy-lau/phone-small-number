@@ -1,11 +1,12 @@
 $(document).on("pageinit", "#Pagelogn", function() {
     $("#logn").on("click", function() {
         var name = $('#name').val();
-        var blm = false
-        if (blm == false) {
-            $("#logn").attr("href", "#modelPage")
-            $("#logn").next().html("")
-        } else if (name) {
+        // var blm = false
+        // if (blm == false) {
+        //     $("#logn").attr("href", "#modelPage")
+        //     $("#logn").next().html("")
+        // } else
+         if (name) {
             $("#logn").attr("href", "#page1")
             $("#logn").next().html("")
         } else {
@@ -57,48 +58,7 @@ $(document).on("pageinit", "#page4", function() {
         }
     });
 });
-$(document).on("pageinit", "#modelPage", function() {
-    $("fieldset").hide()
-    $("#ax").show()
-    $("#T1").on("click", function() {
-        $("#ax").show()
-        $("#axyb").hide()
-    })
-    $("#T2").on("click", function() {
-        $("#axyb").show()
-        $("#ax").hide()
-    })
 
-    var userName = [
-        { "tel": 135, "name": "用户1" }, { "tel": 136, "name": "用户2" }, { "tel": 138, "name": "用户3" },
-        { "tel": 170, "name": "用户4" }, { "tel": 188, "name": "用户5" }, { "tel": 166, "name": "用户6" },
-        { "tel": 171, "name": "用户7" }, { "tel": 155, "name": "用户8" }, { "tel": 169, "name": "用户9" }
-    ]
-    for (var i = 0; i < userName.length; i++) {
-        $("select[name='ax']").append("<option value=" + userName[i].tel + " >" + userName[i].name + "</option>")
-        $("select[name='axyb']").append("<option value=" + userName[i].tel + " >" + userName[i].tel + "</option>")
-    }
-
-    // $("select>option:first").html("")
-    // $("select[name='axyb']>option:first").html("")
-
-    $("#ax>a").first().on("click", function() {
-        if ($("select[name='ax']").find("option:selected").val() == '') {
-            alert('请选择您要绑定的小号')
-            $(this).attr("href", "")
-        } else {
-            $(this).attr("href", "#page1")
-        }
-    })
-    $("#axyb>a").first().on("click", function() {
-        if ($("select[name='axyb']").find("option:selected").val() == '') {
-            alert('请选择您要绑定的小号')
-            $(this).attr("href", "")
-        } else {
-            $(this).attr("href", "#page1")
-        }
-    })
-});
 
 $(document).on("pageinit", "#reset", function() {
     $("#submit").on("click", function() {
