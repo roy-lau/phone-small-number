@@ -3,7 +3,7 @@ $(document).on("pageinit", "#Pagelogn", function() {
         var name = $('#name').val();
         var blm = false
         if (blm == false) {
-            $("#logn").attr("href", "#bindingPage")
+            $("#logn").attr("href", "#modelPage")
             $("#logn").next().html("")
         } else if (name) {
             $("#logn").attr("href", "#page1")
@@ -57,16 +57,16 @@ $(document).on("pageinit", "#page4", function() {
         }
     });
 });
-$(document).on("pageinit", "#bindingPage", function() {
+$(document).on("pageinit", "#modelPage", function() {
     $("fieldset").hide()
-    $("#axyb").show()
+    $("#ax").show()
     $("#T1").on("click", function() {
-        $("#axyb").show()
-        $("#axb").hide()
+        $("#ax").show()
+        $("#axyb").hide()
     })
     $("#T2").on("click", function() {
-        $("#axb").show()
-        $("#axyb").hide()
+        $("#axyb").show()
+        $("#ax").hide()
     })
 
     var userName = [
@@ -75,23 +75,23 @@ $(document).on("pageinit", "#bindingPage", function() {
         { "tel": 171, "name": "用户7" }, { "tel": 155, "name": "用户8" }, { "tel": 169, "name": "用户9" }
     ]
     for (var i = 0; i < userName.length; i++) {
-        $("select[name='axyb']").append("<option value=" + userName[i].tel + " >" + userName[i].name + "</option>")
-        $("select[name='axb']").append("<option value=" + userName[i].tel + " >" + userName[i].tel + "</option>")
+        $("select[name='ax']").append("<option value=" + userName[i].tel + " >" + userName[i].name + "</option>")
+        $("select[name='axyb']").append("<option value=" + userName[i].tel + " >" + userName[i].tel + "</option>")
     }
 
     // $("select>option:first").html("")
-    // $("select[name='axb']>option:first").html("")
+    // $("select[name='axyb']>option:first").html("")
 
-    $("#axyb>a").first().on("click", function() {
-        if ($("select[name='axyb']").find("option:selected").val() == '') {
+    $("#ax>a").first().on("click", function() {
+        if ($("select[name='ax']").find("option:selected").val() == '') {
             alert('请选择您要绑定的小号')
             $(this).attr("href", "")
         } else {
             $(this).attr("href", "#page1")
         }
     })
-    $("#axb>a").first().on("click", function() {
-        if ($("select[name='axb']").find("option:selected").val() == '') {
+    $("#axyb>a").first().on("click", function() {
+        if ($("select[name='axyb']").find("option:selected").val() == '') {
             alert('请选择您要绑定的小号')
             $(this).attr("href", "")
         } else {
