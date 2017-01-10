@@ -1,11 +1,6 @@
 $(document).on("pageinit", "#Pagelogn", function() {
     $("#logn").on("click", function() {
-        var name = $('#name').val();
-        // var blm = false
-        // if (blm == false) {
-        //     $("#logn").attr("href", "#modelPage")
-        //     $("#logn").next().html("")
-        // } else
+        var name = $('#userName').val();
         if (name) {
             $("#logn").attr("href", "#page1")
             $("#logn").next().html("")
@@ -34,7 +29,7 @@ $(document).on("pageinit", "#page1", function() {
             case 3:
                 $("select[name='phone']").find("option:selected").val()
                 break;
-            default;
+            default:
         }
 
     });
@@ -51,25 +46,20 @@ $(document).on("pageinit", "#page2", function() {
     });
 });
 
-
 $(document).on("pageinit", "#page3", function() {
     var obj = [
-        { "tel": 135, "date": "2016-12-1" }, { "tel": 136, "date": "2016-12-2" }, { "tel": 138, "date": "2016 - 12 - 3" },
-        { "tel": 170, "date": "2016-12-4" }, { "tel": 188, "date": "2016-12-5" }, { "tel": 166, "date": "2016 - 12 - 6" },
-        { "tel": 171, "date": "2016-12-7" }, { "tel": 155, "date": "2016-12-8" }, { "tel": 169, "date": "2016 - 12 - 9" }
+        { "tel": 135, "date": "2016-12-1" }, { "tel": 136, "date": "2016-12-2" }, { "tel": 138, "date": "2016-12-3" },
+        { "tel": 170, "date": "2016-12-4" }, { "tel": 188, "date": "2016-12-5" }, { "tel": 166, "date": "2016-12-6" },
+        { "tel": 171, "date": "2016-12-7" }, { "tel": 155, "date": "2016-12-8" }, { "tel": 169, "date": "2016-12-9" }
     ]
     for (var i = 0; i < obj.length; i++) {
         $('#UlTel').append("<li data-icon='info' class='ui-last-child'>" + "<a href='tel:" + obj[i].tel + "' class='ui-btn ui-btn-icon-right ui-icon-info'>" + "<h4>" + obj[i].tel + "</h4>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
     }
 });
 $(document).on("pageinit", "#page4", function() {
-    $("#Rbd").on("click", function() {
-        if (confirm("您确定解绑小号吗？")) {
-            alert("解绑成功！")
-        }
-    });
+    var name = $('#userName').val();
+    $("#machine").html(name)
 });
-
 
 $(document).on("pageinit", "#reset", function() {
     $("#submit").on("click", function() {
@@ -86,5 +76,4 @@ $(document).on("pageinit", "#reset", function() {
             alert("两次密码输入不一致！")
         }
     })
-
 });
