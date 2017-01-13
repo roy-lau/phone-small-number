@@ -12,6 +12,26 @@ $(document).on("pageinit", "#Pagelogn", function() {
 });
 
 $(document).on("pageinit", "#page1", function() {
+
+});
+$(document).on("pageinit", "#page2", function() {
+$('#link').on('click', function() {
+            $.mobile.changePage("#linkman",{transition:"pop"});//$('#linkman').popup('open');
+        });
+
+    var obj = [
+        { "name": "user1", "tel": 135, "date": "2016-12-1" }, { "name": "user2", "tel": 136, "date": "2016-12-2" }, { "name": "user3", "tel": 138, "date": "2016-12-3" },
+        { "name": "user1", "tel": 170, "date": "2016-12-4" }, { "name": "user2", "tel": 188, "date": "2016-12-5" }, { "name": "user3", "tel": 166, "date": "2016-12-6" },
+        { "name": "user1", "tel": 171, "date": "2016-12-7" }, { "name": "user2", "tel": 155, "date": "2016-12-8" }, { "name": "user3", "tel": 169, "date": "2016-12-9" }
+    ]
+
+    for (var i = 0; i < obj.length; i++) {
+        $('#UlTel').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info'   href='tel:" + obj[i].tel + "'>" + "<h4>" + obj[i].name + "</h4>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
+    }
+
+});
+
+$(document).on("pageinit", "#page3", function() {
     var number = [{ "tel": 13100501490 }, { "tel": 13371698888 }, { "tel": 18911919999 }, { "tel": 13301111109 }, { "tel": 18010125555 }, { "tel": 18911731688 }, { "tel": 13311119703 }, { "tel": 18911970588 }, { "tel": 18911731588 }]
     for (var i = 0; i < number.length; i++) {
         $("select[name='phone']").append("<option value=" + number[i].tel + " >" + number[i].tel + "</option>")
@@ -33,28 +53,7 @@ $(document).on("pageinit", "#page1", function() {
         }
 
     });
-});
-$(document).on("pageinit", "#page2", function() {
-    var number = [{ "tel": 13100501490 }, { "tel": 13371698888 }, { "tel": 18911919999 }, { "tel": 13301111109 }, { "tel": 18010125555 }, { "tel": 18911731688 }, { "tel": 13311119703 }, { "tel": 18911970588 }, { "tel": 18911731588 }]
 
-    for (var i = 0; i < number.length; i++) {
-        $("select[name='sms']").append("<option value=" + number[i].tel + " >" + number[i].tel + "</option>")
-    }
-    $("#SmsBtn").on("click", function() {
-        var TextArea = $('textarea').val();
-        $("#SmsBtn").attr("href", "sms:" + $("select[name='sms']").find("option:selected").val() + "?body=" + TextArea);
-    });
-});
-
-$(document).on("pageinit", "#page3", function() {
-    var obj = [
-        { "tel": 135, "date": "2016-12-1" }, { "tel": 136, "date": "2016-12-2" }, { "tel": 138, "date": "2016-12-3" },
-        { "tel": 170, "date": "2016-12-4" }, { "tel": 188, "date": "2016-12-5" }, { "tel": 166, "date": "2016-12-6" },
-        { "tel": 171, "date": "2016-12-7" }, { "tel": 155, "date": "2016-12-8" }, { "tel": 169, "date": "2016-12-9" }
-    ]
-    for (var i = 0; i < obj.length; i++) {
-        $('#UlTel').append("<li data-icon='info' class='ui-last-child'>" + "<a href='tel:" + obj[i].tel + "' class='ui-btn ui-btn-icon-right ui-icon-info'>" + "<h4>" + obj[i].tel + "</h4>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
-    }
 });
 $(document).on("pageinit", "#page4", function() {
     var name = $('#userName').val();
