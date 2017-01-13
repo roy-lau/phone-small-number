@@ -1,62 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Androiddemo</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/github-dark.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="x-rim-auto-match" content="none"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>小号</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
+    <link rel="icon" href="img/title.jpg">
 </head>
+<style type="text/css">
+</style>
 
 <body>
-    <div class="wrapper">
-        <header class="without-description">
-            <h1>随叫随到\(^o^)/~：</h1>
-        </header>
-        <section>
-          
-            <a href="sms:13526636963" type="button" class="btn btn-primary">发短信</a>
-            <hr>
-            <a href="sms:13526636963?body=你好！" type="button" class="btn btn-primary">安卓带内容短信</a>
-            <hr>
-            <a href="sms:13526636963&body=你好！" type="button" class="btn btn-primary">苹果带内容短信</a>
-            <hr>
-            <a href="sms:13526636963;body=你好！" type="button" class="btn btn-primary">苹果带内容短信</a>
-            <hr>        
-            <a href="tel:13526636962" type="button" class="btn btn-warning">呼叫奴婢</a>
-            <hr>
-            <a href="mailto:897379293@qq.com" type="button" class="btn btn-danger">发送邮件<a>
-            <hr>
-            <a href="wtai://wp/mc;13526636963" type="button" class="btn btn-success">呼叫奴婢</a>
-            <hr>
-            
-            <input name="phone_no" format="*m" value="13" />
-             <do type="option" label="呼出号">
-                <go href="wtai://wp/mc;$(phone_no)" />
-            </do>
-            <a href="wtai://wp/ap;135266369625;" type="button" class="btn btn-info">存储至电话簿</a>
-            <hr/>
-                <input type="file" accept="image/*" capture="camera">图片
-                <input type="file" accept="video/*" capture="camcorder">视频
-                <input type="file" accept="audio/*" capture="microphone">音频
-
-                <hr> <hr> <hr>
-                <h4>由于手机 和 浏览器种类繁多，部分功能不能使用。请见谅！</h4>
-        </section>
+    <div data-role="page" id="Pagelogn">
+        <form class="ui-content">
+            <img src="img/logn.png">
+            <br>
+            <input data-clear-btn="true" name="text" id="userName" value="" placeholder="账号" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="11">
+            <input data-clear-btn="true" name="password" id="password" value="" autocomplete="off" placeholder="密码" type="password" maxlength="16">
+            <br>
+            <a href="#" data-transition="slideup" class="ui-btn ui-corner-all" style="background-color: #13B8F5;color: white;font-weight: 100;border-radius: 20px;" id="logn">登陆</a>
+            <span style="color: red;"></span>
+        </form>
     </div>
-    <footer>
-        <p>Project maintained by <a href="https://github.com/a-qiang">qiang</a></p>
-        <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <div data-role="page" id="page1">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>最近</h3>
+        </div>
+        <div data-role="main">
+            <div data-role="content">
+                <p style="text-align: center;line-height: 10em">亲，您还没有通话记录哟！</p>
+            </div>
+        </div>
+        <footer data-role="footer" data-position="fixed" data-fullscreen="true">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#page1" class="ui-btn ui-icon-clock ui-btn-icon-top">最近</a>
+                    </li>
+                    <li>
+                        <a href="#page2" class="ui-btn ui-icon-comment ui-btn-icon-top">客 户</a>
+                    </li>
+                    <li>
+                        <a href="#page3" class="ui-btn ui-icon-calendar ui-btn-icon-top">拨 号</a>
+                    </li>
+                    <li>
+                        <a href="#page4" class="ui-btn ui-icon-user ui-btn-icon-top">我</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div data-role="page" id="page2">
+        <div data-role="header">
+            <!--   <span class="ui-btn-left" data-rel="back" style="transform: scale(2);margin: 10px 0 0 10px;"> < </span> -->
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>客 户</h3>
+            <span id="link" class="ui-btn-right" style="transform: scale(3);margin: 8px 10px 0 0;">+</span>
+        </div>
+        <div data-role="main">
+            <div data-role="content">
+                <ul data-role="listview" data-filter="true" id="UlTel" data-filter-placeholder="搜索号码 ...">
+                    <!--data-autodividers="true" -->
+                </ul>
+            </div>
+        </div>
+        <footer data-role="footer" data-position="fixed" data-fullscreen="true">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#page1" class="ui-btn ui-icon-clock ui-btn-icon-top">最近</a>
+                    </li>
+                    <li>
+                        <a href="#page2" class="ui-btn ui-icon-comment ui-btn-icon-top">客 户</a>
+                    </li>
+                    <li>
+                        <a href="#page3" class="ui-btn ui-icon-calendar ui-btn-icon-top">拨 号</a>
+                    </li>
+                    <li>
+                        <a href="#page4" class="ui-btn ui-icon-user ui-btn-icon-top">我</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div data-role="page" id="page3">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>拨 号</h3>
+        </div>
+        <div data-role="main">
+            <div data-role="content">
+                <!--   <select name="phone">
+                    <option value="">请选择您要拨打的手机号！</option>
+                </select> -->
+                <input type="text" name="">
+                <br />
+                <a href="" type="button" class="ui-btn ui-icon-phone ui-btn-icon-left" style="background-color: #13B8F5;color: white;font-weight: 100;border-radius: 10px;" id="TelBtn">拨号</a>
+            </div>
+        </div>
+        <footer data-role="footer" data-position="fixed" data-fullscreen="true">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#page1" class="ui-btn ui-icon-clock ui-btn-icon-top">最近</a>
+                    </li>
+                    <li>
+                        <a href="#page2" class="ui-btn ui-icon-comment ui-btn-icon-top">客 户</a>
+                    </li>
+                    <li>
+                        <a href="#page3" class="ui-btn ui-icon-calendar ui-btn-icon-top">拨 号</a>
+                    </li>
+                    <li>
+                        <a href="#page4" class="ui-btn ui-icon-user ui-btn-icon-top">我</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div data-role="page" id="page4">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>个人设置</h3>
+        </div>
+        <div data-role="main">
+            <ul data-role="listview" data-inset="true">
+                <li data-icon=""><a href="">本机号码 <span class='ui-li-count' id="machine">1888888888888888</span></a></li>
+                <li data-icon=""><a href="#reset">修改密码</a></li>
+                <div data-role="collapsible">
+                    <h4>推荐给朋友</h4>
+                    <img src="img/QRcode.png">
+                </div>
+            </ul>
+            <br />
+            <a href="#Pagelogn" class="ui-btn ui-corner-all" style="background-color:#C30023;color:white;padding:10px;" data-transition="slidedown">切换账号</a>
+        </div>
+        <footer data-role="footer" data-position="fixed" data-fullscreen="true">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#page1" class="ui-btn ui-icon-clock ui-btn-icon-top">最近</a>
+                    </li>
+                    <li>
+                        <a href="#page2" class="ui-btn ui-icon-comment ui-btn-icon-top">客 户</a>
+                    </li>
+                    <li>
+                        <a href="#page3" class="ui-btn ui-icon-calendar ui-btn-icon-top">拨 号</a>
+                    </li>
+                    <li>
+                        <a href="#page4" class="ui-btn ui-icon-user ui-btn-icon-top">我</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div data-role="page" id="Addlinkman">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>添加 - 联系人</h3>
+        </div>
+        <div data-role="main">
+            <form method="post" action="">
+                <div data-role="fieldcontain">
+                    <label for="newPwd">姓名：</label>
+                    <input type="text" name="newPwd" id="NewName" required="required">
+                    <br>
+                    <label for="oldPwd">手机号：</label>
+                    <input type="tel" name="oldPwd" id="NewTel" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                </div>
+                <a href="#page2" id="tolinkman" class="ui-btn ui-corner-all">确认添加</a>
+            </form>
+        </div>
+    </div>
+
+    <div data-role="page" id="linkmanList">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>联系人</h3>
+        </div>
+        <div data-role="main">
+                <ul data-role="listview" data-filter="true" id="UlTel" data-filter-placeholder="搜索号码 ...">
+                    <!--data-autodividers="true" -->
+                </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-role="page" id="reset">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>修改密码</h3>
+        </div>
+        <div data-role="main">
+            <form method="post" action="">
+                <div data-role="fieldcontain">
+                    <label for="newPwd">新密码：</label>
+                    <input type="tel" name="newPwd" id="newPwd" required="required" maxlength="16" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                    <label for="oldPwd">确认密码：</label>
+                    <input type="password" name="oldPwd" id="oldPwd" required="required" maxlength="16" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                </div>
+                <a href="#" id="submit" class="ui-btn ui-corner-all">确认修改</a>
+            </form>
+        </div>
+    </div>
 </body>
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 </html>
