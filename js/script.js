@@ -74,7 +74,7 @@ $(document).on("pageinit", "#page3", function() {
         $(this).attr("href", "sms:" + EditPhone.innerHTML + "?body=");
     });
     $("#TelBtn").on("click", function() {
-        $(this).attr("href", "tel:" + EditPhone.innerHTML);
+        $(this).attr("href", "wtai://wp//mc;" + EditPhone.innerHTML);
     });
 
     $("#Toggle").on("click", function() {
