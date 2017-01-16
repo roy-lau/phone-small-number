@@ -93,7 +93,7 @@ $(document).on("pageinit", "#linkmanList", function() {
 $(document).on("pageinit", "#details", function() {
         $("#DList").show()
         $("#RecordList").hide()
-    $("#details").on("swipeleft click", function() {
+    $("#details").on("swipeleft", function() {
         $("#DList").hide()
         $("#RecordList").show()
         alert("向左滑动!");
@@ -103,14 +103,33 @@ $(document).on("pageinit", "#details", function() {
         $("#Dcompany").html()
         $("#DRemarks").html()
     });
-    $("#details").on("swiperight click", function() {
+    $("#details").on("swiperight", function() {
         $("#DList").show()
         $("#RecordList").hide()
         alert("向右滑动!");
-        for (var i = 0; i < data.length; i++) {
-            $('#linkmanL').append("<li>" 
-                + "<a href=''>" +  + "</a>" + "</li>")
-        }
+        // for (var i = 0; i < data.length; i++) {
+        //     $('#linkmanL').append("<li>" 
+        //         + "<a href=''>" +  + "</a>" + "</li>")
+        // }
+    }); 
+    $("#Dl").on("click", function() {
+        $("#DList").show()
+        $("#RecordList").hide()
+        
+        $("#DUserName").html()
+        $("#DNumber1").html()
+        $("#DNumber2").html()
+        $("#Dcompany").html()
+        $("#DRemarks").html()
+    });
+    $("#Dr").on("click", function() {
+        $("#DList").hide()
+        $("#RecordList").show()
+ 
+        // for (var i = 0; i < data.length; i++) {
+        //     $('#linkmanL').append("<li>" 
+        //         + "<a href=''>" +  + "</a>" + "</li>")
+        // }
     });
 });
 $(document).on("pageinit", "#reset", function() {
