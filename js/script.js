@@ -19,18 +19,6 @@ $('#link').on('click', function() {
             $.mobile.changePage("#Addlinkman",{transition:"pop"});//$('#Addlinkman').popup('open');
         });
 
-    var obj = [
-        { "name": "user1", "tel": 135, "date": "2016-12-1" }, { "name": "user2", "tel": 136, "date": "2016-12-2" }, { "name": "user3", "tel": 138, "date": "2016-12-3" },
-        { "name": "user1", "tel": 170, "date": "2016-12-4" }, { "name": "user2", "tel": 188, "date": "2016-12-5" }, { "name": "user3", "tel": 166, "date": "2016-12-6" },
-        { "name": "user1", "tel": 171, "date": "2016-12-7" }, { "name": "user2", "tel": 155, "date": "2016-12-8" }, { "name": "user3", "tel": 169, "date": "2016-12-9" }
-    ]
-
-    for (var i = 0; i < obj.length; i++) {
-        $('#UlTel').append("<li data-icon='info' class='ui-last-child'>" 
-            + "<a class='ui-btn ui-btn-icon-right ui-icon-info'   href='wtai://wp/mc;" + obj[i].tel + "'>" 
-            + "<h4>" + obj[i].name + "</h4>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
-    }
-
 });
 
 $(document).on("pageinit", "#page3", function() {
@@ -72,7 +60,10 @@ $(document).on("pageinit", "#linkmanList", function() {
     ]
 
     for (var i = 0; i < obj.length; i++) {
-        $('#UlTel').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info'   href='tel:" + obj[i].tel + "'>" + "<h4>" + obj[i].name + "</h4>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
+        $('#UlTel').append("<li data-icon='info' class='ui-last-child'>" 
+            + "<a class='ui-btn ui-btn-icon-right ui-icon-info'   href='tel:" + obj[i].tel + "'>" 
+            + "<h4>" + obj[i].name + "</h4>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" 
+            + "</a>" + "</li>")
     }
 
 });
