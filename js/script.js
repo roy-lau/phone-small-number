@@ -24,11 +24,32 @@ $(document).on("pageinit", "#Pagelogn", function() {
 });
 
 $(document).on("pageinit", "#page1", function() {
+    if (1==1) {
+        $("#LatelyList").append("<p style='text-align: center;line-height: 10em'>亲，您还没有通话记录哟！</p>")
+    } else {
+        var obj = [
+            { "name": "user1", "tel": 135, "date": "2016-12-1" }, { "name": "user2", "tel": 136, "date": "2016-12-2" }, { "name": "user3", "tel": 138, "date": "2016-12-3" },
+            { "name": "user1", "tel": 170, "date": "2016-12-4" }, { "name": "user2", "tel": 188, "date": "2016-12-5" }, { "name": "user3", "tel": 166, "date": "2016-12-6" },
+            { "name": "user1", "tel": 171, "date": "2016-12-7" }, { "name": "user2", "tel": 155, "date": "2016-12-8" }, { "name": "user3", "tel": 169, "date": "2016-12-9" }
+        ]
+        for (var i = 0; i < obj.length; i++) {
+            $('#LatelyList').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info'  href='#details'>" + "<h4 value=" + obj[i].tel + " >" + obj[i].name + "</h4>" + "<p>" + obj[i].tel + "</p>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
+        }
+    }
 
 });
 $(document).on("pageinit", "#page2", function() {
     $('#link').on('click', function() {
         $.mobile.changePage("#Addlinkman", { transition: "pop" }); //$('#Addlinkman').popup('open');
+    });
+    $("#timeLs li:eq(0)").on('click', function() {
+        alert(1)
+    });
+    $("#timeLs li:eq(1)").on('click', function() {
+        alert(2)
+    });
+    $("#timeLs li:eq(2)").on('click', function() {
+        alert(3)
     });
     var obj = [
         { "name": "user1", "tel": 135, "date": "2016-12-1" }, { "name": "user2", "tel": 136, "date": "2016-12-2" }, { "name": "user3", "tel": 138, "date": "2016-12-3" },
@@ -91,8 +112,8 @@ $(document).on("pageinit", "#linkmanList", function() {
 });
 
 $(document).on("pageinit", "#details", function() {
-        $("#DList").show()
-        $("#RecordList").hide()
+    $("#DList").show()
+    $("#RecordList").hide()
     $("#details").on("swipeleft", function() {
         $("#DList").hide()
         $("#RecordList").show()
@@ -111,11 +132,11 @@ $(document).on("pageinit", "#details", function() {
         //     $('#linkmanL').append("<li>" 
         //         + "<a href=''>" +  + "</a>" + "</li>")
         // }
-    }); 
+    });
     $("#Dl").on("click", function() {
         $("#DList").show()
         $("#RecordList").hide()
-        
+
         $("#DUserName").html()
         $("#DNumber1").html()
         $("#DNumber2").html()
@@ -125,7 +146,7 @@ $(document).on("pageinit", "#details", function() {
     $("#Dr").on("click", function() {
         $("#DList").hide()
         $("#RecordList").show()
- 
+
         // for (var i = 0; i < data.length; i++) {
         //     $('#linkmanL').append("<li>" 
         //         + "<a href=''>" +  + "</a>" + "</li>")

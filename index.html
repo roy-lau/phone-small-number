@@ -29,14 +29,18 @@
         </div>
         <div data-role="main">
             <div data-role="content">
-                <p style="text-align: center;line-height: 10em">亲，您还没有通话记录哟！</p>
+            <ul data-role="listview" data-filter="true" id="LatelyList" 
+                 data-filter-placeholder="搜索号码 ...">
+                    <!-- 亲，您还没有通话记录哟！ -->
+                </ul>
+                
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
                     <li>
-                        <a href="#page1" class="ui-btn ui-icon-clock ui-btn-icon-top">最近</a>
+                        <a href="#page1" class="ui-btn ui-icon-clock ui-btn-icon-top">最 近</a>
                     </li>
                     <li>
                         <a href="#page2" class="ui-btn ui-icon-comment ui-btn-icon-top">客 户</a>
@@ -59,14 +63,15 @@
         </div>
         <div data-role="main">
             <div data-role="content">
-                <ul data-role="listview" data-filter-placeholder="搜索号码 ...">
+                <ul data-role="listview" id="timeLs" ">
                     <li data-icon="carat-r"><a href="#linkmanList">三天未联系</a></li>
                     <li data-icon="carat-r"><a href="#linkmanList">七天未联系</a></li>
                     <li data-icon="carat-r"><a href="#linkmanList">本月未联系</a></li>
                 </ul>
                 <br>
                 <h3 id="linkmanTitle"></h3>
-                 <ul data-role="listview" data-filter="true" id="linkmanTotal" data-filter-placeholder="搜索号码 ...">
+                 <ul data-role="listview" data-filter="true" id="linkmanTotal" 
+                 data-filter-placeholder="搜索号码 ...">
                     <!--data-autodividers="true" -->
                 </ul>
             </div>
@@ -227,7 +232,7 @@
             </div>
         </div>
     </div>
-      <div data-role="page" id="details">
+    <div data-role="page" id="details">
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
             <h3>联系人</h3>
