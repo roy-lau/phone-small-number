@@ -8,6 +8,18 @@ $(document).on("pageinit", "#Pagelogn", function() {
             $("#logn").attr("href", "")
             $("#logn").next().html("用户名密码不匹配！")
         }
+        switch (model) {
+            case 1:
+               
+                break;
+            case 2:
+               
+                break;
+            case 3:
+              
+                break;
+            default:
+        }
     });
 });
 
@@ -15,35 +27,26 @@ $(document).on("pageinit", "#page1", function() {
 
 });
 $(document).on("pageinit", "#page2", function() {
-$('#link').on('click', function() {
+    $('#link').on('click', function() {
             $.mobile.changePage("#Addlinkman",{transition:"pop"});//$('#Addlinkman').popup('open');
         });
 
 });
 
 $(document).on("pageinit", "#page3", function() {
-    var number = [{ "tel": 13100501490 }, { "tel": 13371698888 }, { "tel": 18911919999 }, { "tel": 13301111109 }, { "tel": 18010125555 }, { "tel": 18911731688 }, { "tel": 13311119703 }, { "tel": 18911970588 }, { "tel": 18911731588 }]
-    for (var i = 0; i < number.length; i++) {
-        $("select[name='phone']").append("<option value=" + number[i].tel + " >" 
-            + number[i].tel + "</option>")
-    }
     $("#TelBtn").on("click", function() {
-        $("#TelBtn").attr("href", "tel:" + $("select[name='phone']").find("option:selected").val());
-
-        switch (model) {
-            case 1:
-                $("select[name='phone']").find("option:selected").val()
-                break;
-            case 2:
-                $("select[name='phone']").find("option:selected").val()
-                break;
-            case 3:
-                $("select[name='phone']").find("option:selected").val()
-                break;
-            default:
-        }
-
+        $("#TelBtn").attr("href", "tel:"+ EditPhone.innerHTML);
     });
+
+    $("#Toggle").on("click", function() {
+        $(this).toggleClass("ui-btn ui-icon-carat-d ui-btn-icon-top");
+        $(this).toggleClass("ui-btn ui-icon-carat-u ui-btn-icon-top");
+        $(".keyboards").slideToggle(500);/*滑动效果*/
+    });
+    $("#del").on("click", function() {
+     EditPhone.innerHTML = EditPhone.innerHTML.substring(0, EditPhone.innerHTML.length -1);
+    });
+
 
 });
 $(document).on("pageinit", "#page4", function() {
