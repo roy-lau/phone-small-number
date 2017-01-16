@@ -76,6 +76,7 @@ $(document).on("pageinit", "#page3", function() {
     });
     $("#TelBtn").on("click", function() {
         $(this).prop("href", "wtai://wp/mc;" + EditPhone.innerHTML);
+        EditPhone.innerHTML = ""
     });
 
     $("#Toggle").on("click", function() {
