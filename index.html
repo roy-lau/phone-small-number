@@ -32,7 +32,7 @@
                 <p style="text-align: center;line-height: 10em">亲，您还没有通话记录哟！</p>
             </div>
         </div>
-        <footer data-role="footer" data-position="fixed" data-fullscreen="true">
+        <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
                     <li>
@@ -59,14 +59,19 @@
         </div>
         <div data-role="main">
             <div data-role="content">
-                <ul data-role="listview" data-filter="true" id="" data-filter-placeholder="搜索号码 ...">
+                <ul data-role="listview" data-filter-placeholder="搜索号码 ...">
                     <li data-icon="carat-r"><a href="#linkmanList">三天未联系</a></li>
                     <li data-icon="carat-r"><a href="#linkmanList">七天未联系</a></li>
                     <li data-icon="carat-r"><a href="#linkmanList">本月未联系</a></li>
                 </ul>
+                <br>
+                <h3 id="linkmanTitle"></h3>
+                 <ul data-role="listview" data-filter="true" id="linkmanTotal" data-filter-placeholder="搜索号码 ...">
+                    <!--data-autodividers="true" -->
+                </ul>
             </div>
         </div>
-        <footer data-role="footer" data-position="fixed" data-fullscreen="true">
+       <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
                     <li>
@@ -88,17 +93,18 @@
     <div data-role="page" id="page3">
         <div data-role="header">
             <h3 id="EditPhone" required="required" maxlength="11"></h3>
+            <a href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-right ui-btn-icon-notext del"></a>
         </div>
           <div data-role="main">
             <div data-role="content">
-        
+        	<!-- ............. -->
             </div>
         </div>
-        <footer data-role="footer" data-position="fixed" data-fullscreen="true">
+      <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="" class="ui-btn ui-icon-plus ui-btn-icon-top">添加联系人</a></li>
-                    <li><a href="" class="ui-btn ui-icon-mail ui-btn-icon-top">发送短信</a></li>
+                    <li><a href="#Addlinkman" class="ui-btn ui-icon-plus ui-btn-icon-top">添加联系人</a></li>
+                    <li><a href="" class="ui-btn ui-icon-mail ui-btn-icon-top" id="sms">发送短信</a></li>
                 </ul>
                 <div class="keyboards">
                     <ul>
@@ -125,7 +131,7 @@
                         <a href="" type="button" class="ui-btn ui-icon-phone ui-btn-icon-top" style="background-color: #13B8F5;color: white;font-weight: 100;" id="TelBtn"></a>
                     </li>
                     <li>
-                        <a href="" class="ui-btn ui-icon-delete ui-btn-icon-top" id="del"></a>
+                        <a href="" class="ui-btn ui-icon-delete ui-btn-icon-top del"></a>
                     </li>
                 </ul>
                 <ul>
@@ -161,7 +167,7 @@
             <br />
             <a href="#Pagelogn" class="ui-btn ui-corner-all" style="background-color:#C30023;color:white;padding:10px;" data-transition="slidedown">切换账号</a>
         </div>
-        <footer data-role="footer" data-position="fixed" data-fullscreen="true">
+        <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
                     <li>
@@ -184,7 +190,7 @@
         <div data-role="header">
             <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
             <h3>新建客户</h3>
-            <a href="#page2" id="tolinkman" class="ui-btn ui-corner-all">保存</a>
+            <a href="#page2" id="tolinkman" class="ui-btn" style="background-color: transparent;border:0px;color: white">保存</a>
         </div>
         <div data-role="main">
             <form method="post" action="">
@@ -195,7 +201,7 @@
                     <label for="Number1">电话1：</label>
                     <input type="tel" name="Number1" id="Number1" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                     <br>
-                    <label for="Number2">电话1：</label>
+                    <label for="Number2">电话2：</label>
                     <input type="tel" name="Number2" id="Number2" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                     <br>
                     <label for="company">公司姓名：</label>
@@ -215,8 +221,39 @@
         </div>
         <div data-role="main">
             <div data-role="content">
-                <ul data-role="listview" data-filter="true" id="UlTel" data-filter-placeholder="搜索号码 ...">
+                <ul data-role="listview" data-filter="true" id="linkmanL" data-filter-placeholder="搜索号码 ...">
                     <!--data-autodividers="true" -->
+                </ul>
+            </div>
+        </div>
+    </div>
+      <div data-role="page" id="details">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" data-rel="back">回退</a>
+            <h3>联系人</h3>
+             <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a class="ui-btn ui-btn-active">详情</a>
+                    </li>
+                    <li>
+                        <a class="ui-btn">联系记录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main">
+            <div data-role="content">
+                <ul data-role="listview" id="DList">
+                   <li><span>客户编号：</span>	<span id="DUserID"></span></li>
+                   <li><span>客户姓名：</span>	<span id="DUserName"></span></li>
+                   <li><span>电话1：</span>		<span id="DNumber1"></span></li>
+                   <li><span>电话2：</span>		<span id="DNumber2"></span></li>
+                   <li><span>公司名称：</span>	<span id="Dcompany"></span></li>
+                   <li><span>备注：</span>		<span id="DRemarks"></span></li>
+                </ul>
+                 <ul data-role="listview" id="RecordList">
+             	<li><a href="">111111111</a></li>
                 </ul>
             </div>
         </div>
