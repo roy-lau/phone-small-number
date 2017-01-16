@@ -2,10 +2,10 @@ $(document).on("pageinit", "#Pagelogn", function() {
     $("#logn").on("click", function() {
         var name = $('#userName').val();
         if (name) {
-            $("#logn").attr("href", "#page1")
+            $("#logn").prop("href", "#page1")
             $("#logn").next().html("")
         } else {
-            $("#logn").attr("href", "")
+            $("#logn").prop("href", "")
             $("#logn").next().html("用户名密码不匹配！")
         }
         switch (model) {
@@ -24,7 +24,8 @@ $(document).on("pageinit", "#Pagelogn", function() {
 });
 
 $(document).on("pageinit", "#page1", function() {
-    if (1==1) {
+    /******当有通话记录的时候显示数据，没有通话记录的时候显示“亲，您还没有通话记录哟！”*******/
+    if (1==1) { 
         $("#LatelyList").append("<p style='text-align: center;line-height: 10em'>亲，您还没有通话记录哟！</p>")
     } else {
         var obj = [
@@ -61,20 +62,20 @@ $(document).on("pageinit", "#page2", function() {
         $('#linkmanTotal').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info'  href='#details'>" + "<h4 value=" + obj[i].tel + " >" + obj[i].name + "</h4>" + "<p>" + obj[i].tel + "</p>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
     }
     $("[href=#details]").on('click', function() {
-        alert($(this).find("p").html())
+        alert($(this).find("p").html())             //点击某个联系人把号码传个后台
     })
 });
 
 $(document).on("pageinit", "#page3", function() {
     $("a[href=#Addlinkman]").on("click", function() {
-        $("#Number1").val(EditPhone.innerHTML)
-    });
+        $("#Number1").val(EditPhone.innerHTML)      //点击添加联系人，把号码放到添加联系人的页面 Add
+    });     
 
     $("#sms").on("click", function() {
-        $(this).attr("href", "sms:" + EditPhone.innerHTML + "?body=");
+        $(this).prop("href", "sms:" + EditPhone.innerHTML + "?body=");
     });
     $("#TelBtn").on("click", function() {
-        $(this).attr("href", "wtai://wp//mc;" + EditPhone.innerHTML);
+        $(this).prop("href", "wtai://wp//mc;" + EditPhone.innerHTML);
     });
 
     $("#Toggle").on("click", function() {
@@ -87,14 +88,16 @@ $(document).on("pageinit", "#page3", function() {
     });
 
 });
+
 $(document).on("pageinit", "#page4", function() {
     var name = $('#userName').val();
     $("#machine").html(name)
 });
+
 $(document).on("pageinit", "#Addlinkman", function() {
     $("#tolinkman").on("click", function() {
         var linkmanArr = [$("#UserName").val(), $("#Number1").val(), $("#Number2").val(), $("#company").val(), $("#Remarks").val()]
-        console.log(linkmanArr)
+        console.log(linkmanArr)     //添加联系人
     });
 });
 
@@ -104,7 +107,7 @@ $(document).on("pageinit", "#linkmanList", function() {
         { "name": "user1", "tel": 170, "date": "2016-12-4" }, { "name": "user2", "tel": 188, "date": "2016-12-5" }, { "name": "user3", "tel": 166, "date": "2016-12-6" },
         { "name": "user1", "tel": 171, "date": "2016-12-7" }, { "name": "user2", "tel": 155, "date": "2016-12-8" }, { "name": "user3", "tel": 169, "date": "2016-12-9" }
     ]
-
+    //---------------某个月的联系记录
     for (var i = 0; i < obj.length; i++) {
         $('#linkmanL').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info' href='tel:" + obj[i].tel + "'>" + "<h4>" + obj[i].name + "</h4>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
     }
@@ -152,6 +155,22 @@ $(document).on("pageinit", "#details", function() {
         //         + "<a href=''>" +  + "</a>" + "</li>")
         // }
     });
+
+    $("#Dtel").on("click", function(){
+       $(this).prop("href", "sms:" + $("#DNumber1").html() + "?body=");
+    })
+    $("#Dtel").on("click", function(){
+       $(this).prop("href", "wtai://wp//mc;" + $("#DNumber1").html()); 
+    })
+    $("[href=#modify]").on("click", function(){
+        $("#DNumber1").html()   //点击编辑 把号码传给后台
+    })
+});
+$(document).on("pageinit", "#modify", function() {
+    $("#modifyLinkman").on("click", function() {
+        var linkmanArr = [$("#UserName").val(), $("#Number1").val(), $("#Number2").val(), $("#company").val(), $("#Remarks").val()]
+        console.log(linkmanArr)    //修改某个联系人信息
+    });
 });
 $(document).on("pageinit", "#reset", function() {
     $("#submit").on("click", function() {
@@ -160,11 +179,11 @@ $(document).on("pageinit", "#reset", function() {
         if (newPwd == oldPwd) {
             //在这里写发送的方法！
             $('#submit').removeAttr('disabled');
-            $("#submit").attr("href", "#Pagelogn")
+            $("#submit").prop("href", "#Pagelogn")
             alert("密码修改成功！")
         } else {
-            $('#submit').attr('disabled', 'disabled');
-            $("#submit").attr("href", "#")
+            $('#submit').prop('disabled', 'disabled');
+            $("#submit").prop("href", "#")
             alert("两次密码输入不一致！")
         }
     })
