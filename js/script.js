@@ -161,7 +161,7 @@ $(document).on("pageinit", "#details", function() {
        $(this).prop("href", "sms:" + $("#DNumber1").html() + "?body=");
     })
     $("#Dtel").on("click", function(){
-       $(this).prop("href", "wtai://wp//mc;" + $("#DNumber1").html()); 
+       $(this).prop("href", "wtai://wp/mc;" + $("#DNumber1").html()); 
     })
     $("[href=#modify]").on("click", function(){
         $("#DNumber1").html()   //点击编辑 把号码传给后台
