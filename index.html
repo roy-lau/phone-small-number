@@ -9,6 +9,15 @@
     <link rel="icon" href="img/title.jpg">
 </head>
 <style type="text/css">
+.ui-btn-icon-top,.ui-icon-user:after,
+.ui-btn-icon-top,.ui-icon-comment:after,
+.ui-btn-icon-top,.ui-icon-calendar:after,
+.ui-btn-icon-top,.ui-icon-clock:after,
+.ui-corner-all,.ui-icon-refresh:after,
+.ui-corner-all,.ui-icon-carat-l:after,
+.ui-corner-all,.ui-icon-delete:after{
+    background-color: rgba(47, 133, 230, 0.3);
+}
 </style>
 
 <body>
@@ -123,7 +132,7 @@
                         <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">7</a></li>
                         <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">8</a></li>
                         <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">9</a></li>
-                    </ul> 
+                    </ul>
                     <ul>
                         <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">*</a></li>
                         <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">0</a></li>
@@ -163,15 +172,16 @@
             <h3>个人设置</h3>
         </div>
         <div data-role="main">
-            <ul data-role="listview" data-inset="true">
+            <ul data-role="listview"    >
                 <li data-icon=""><a href="">本机号码 <span class='ui-li-count' id="machine">1888888888888888</span></a></li>
                 <li data-icon=""><a href="#reset">修改密码</a></li>
+                <br>
                 <div data-role="collapsible">
                     <h4>推荐给朋友</h4>
                     <img src="img/QRcode.png">
                 </div>
             </ul>
-            <br />
+         
             <a href="#Pagelogn" class="ui-btn ui-corner-all" style="background-color:#C30023;color:white;padding:10px;" data-transition="slidedown">切换账号</a>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -255,19 +265,19 @@
                     <li><span>客户编号：</span> <span id="DUserID"></span></li>
                     <li><span>客户姓名：</span> <span id="DUserName"></span></li>
                     <li><span>电话1：</span> <span id="DNumber1"></span>
-   					<div data-role="controlgroup" data-type="horizontal"  class="ui-btn-right">
-        				<a href="" class="ui-btn ui-corner-all ui-btn-inline" id="Dtel">拨号</a>
-        				<a href="" class="ui-btn ui-corner-all ui-btn-inline" id="Dsms">短信</a>
-        			</div>
-        			<br>
-        			<br>
+                        <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
+                            <a href="" class="ui-btn ui-corner-all ui-btn-inline" id="Dtel">拨号</a>
+                            <a href="" class="ui-btn ui-corner-all ui-btn-inline" id="Dsms">短信</a>
+                        </div>
+                        <br>
+                        <br>
                     </li>
                     <li><span>电话2：</span> <span id="DNumber2"></span></li>
                     <li><span>公司名称：</span> <span id="Dcompany"></span></li>
                     <li><span>备注：</span> <span id="DRemarks"></span></li>
                 </ul>
                 <ul data-role="listview" id="RecordList">
-                    <li><a href="">111111111</a></li>
+                    <!-- 联系记录 -->
                 </ul>
             </div>
         </div>
@@ -328,13 +338,13 @@
     </div>
 </body>
 <script type="text/javascript">
-function keyboard(tt) {
-    var EditPhone = document.getElementById('EditPhone')
-    EditPhone.innerHTML += tt.innerHTML
-    if (EditPhone.innerHTML.length <= 11) {} else {
+    function keyboard(tt) {
+        var EditPhone = document.getElementById('EditPhone')
+        EditPhone.innerHTML += tt.innerHTML
+        if (EditPhone.innerHTML.length <= 11) {} else {
         alert("输入号码超出的长度")
+        }
     }
-}
 </script>
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
