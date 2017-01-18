@@ -26,7 +26,7 @@ $(document).on("pageinit", "#Pagelogn", function() {
 
 $(document).on("pageinit", "#page1", function() {
     /******当有通话记录的时候显示数据，没有通话记录的时候显示“亲，您还没有通话记录哟！”*******/
-    if (1 == 1) {
+    if (1 == 0) {
         $("#LatelyList").append("<p style='text-align: center;line-height: 10em'>亲，您还没有通话记录哟！</p>")
     } else {
         var obj = [
@@ -35,8 +35,12 @@ $(document).on("pageinit", "#page1", function() {
             { "name": "user1", "tel": 171, "date": "2016-12-7" }, { "name": "user2", "tel": 155, "date": "2016-12-8" }, { "name": "user3", "tel": 169, "date": "2016-12-9" }
         ]
         for (var i = 0; i < obj.length; i++) {
-            $('#LatelyList').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info'  href='#details'>" + "<h4 value=" + obj[i].tel + " >" + obj[i].name + "</h4>" + "<p>" + obj[i].tel + "</p>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
+            $('#LatelyList').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info' id='linkClick' href=''>" + "<h4>" + obj[i].name + "</h4>" + "<p>" + obj[i].tel + "</p>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
         }
+        $("#linkClick").on("click", function() {
+            alert($(this).find("p").html())
+            $(this).prop("href", "wtai://wp/mc;" + $(this).find("p").html()) || $(this).prop("href", "tel:" + $(this).find("p").html());
+        });
     }
 });
 
@@ -73,12 +77,12 @@ $(document).on("pageinit", "#page3", function() {
     });
 
     $("#sms").on("click", function() {
-        $(this).prop("href", "sms:" + EditPhone.innerHTML + "?body=");
+        $(this).prop("href", "sms:" + EditPhone.innerHTML + "?body=" + EditPhone.innerHTML);
     });
     $("#TelBtn").on("click", function() {
         $(this).prop("href", "wtai://wp/mc;" + EditPhone.innerHTML) || $(this).prop("href", "tel:" + EditPhone.innerHTML);
-        EditPhone.innerHTML = ""
-        alert(path)
+        // EditPhone.innerHTML = ""
+        // alert(path)
     });
 
     $("#Toggle").on("click", function() {
@@ -111,68 +115,61 @@ $(document).on("pageinit", "#linkmanList", function() {
         ]
         //---------------某个月的联系记录
     for (var i = 0; i < obj.length; i++) {
-        $('#linkmanL').append("<li data-icon='info' class='ui-last-child'>" 
-            + "<a class='ui-btn ui-btn-icon-right ui-icon-info' href='tel:" + obj[i].tel + "'>" 
-            + "<h4>" + obj[i].name + "</h4>" 
-            + "<span class='ui-li-count'>" + obj[i].date + "</span>" 
-            + "</a>" + "</li>")
+        $('#linkmanL').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info' href='tel:" + obj[i].tel + "'>" + "<h4>" + obj[i].name + "</h4>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
     }
 });
 
 $(document).on("pageinit", "#details", function() {
     $("#DList").show()
     $("#RecordList").hide()
+
+    $("#DUserName").html("123---------")
+    $("#DNumber1").html()
+    $("#DNumber2").html()
+    $("#Dcompany").html()
+    $("#DRemarks").html()
+
     $("#details").on("swipeleft", function() {
         $("#DList").hide()
         $("#RecordList").show()
         alert("向左滑动!");
-        $("#DUserName").html()
-        $("#DNumber1").html()
-        $("#DNumber2").html()
-        $("#Dcompany").html()
-        $("#DRemarks").html()
     });
     $("#details").on("swiperight", function() {
         $("#DList").show()
         $("#RecordList").hide()
         alert("向右滑动!");
-        // for (var i = 0; i < data.length; i++) {
-        //     $('#RecordList').append("<li>" 
-        //         + "<a href=''>" +  + "</a>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" +  "</li>")
-        // }
     });
     $("#Dl").on("click", function() {
         $("#DList").show()
         $("#RecordList").hide()
-
-        $("#DUserName").html()
-        $("#DNumber1").html()
-        $("#DNumber2").html()
-        $("#Dcompany").html()
-        $("#DRemarks").html()
     });
     $("#Dr").on("click", function() {
         $("#DList").hide()
         $("#RecordList").show()
-
-        // for (var i = 0; i < data.length; i++) {
-        //     $('#RecordList').append("<li>" 
-        //         + "<a href=''>" +  + "</a>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" +  "</li>")
-        // }
     });
 
     $("#Dtel").on("click", function() {
-        $(this).prop("href", "sms:" + $("#DNumber1").html() + "?body=");
+        $(this).prop("href", "sms:" + $("#DNumber1").html() + "?body=" + $("#DNumber1").html());
     })
     $("#Dtel").on("click", function() {
-        $(this).prop("href", "wtai://wp/mc;" + $("#DNumber1").html());
+        $(this).prop("href", "wtai://wp/mc;" + $("#DNumber1").html()) || $(this).prop("href", "tel:" + $("#DNumber1").html());
     })
-    $("[href=#modify]").on("click", function() {
-        $("#DNumber1").html() //点击编辑 把号码传给后台
-    })
+   // $("[href=#modify]").on("click", function() {
+   //      $("#UuserName").val($("#DUserName").html())
+   //      $("#Number1").val($("#DNumber1").html())
+   //      $("#Number2").val($("#DNumber2").html())
+   //      $("#company").val($("#Dcompany").html())
+   //      $("#Remarks").val($("#DRemarks").html())
+   //  })
 });
 
 $(document).on("pageinit", "#modify", function() {
+        $("#_UserName").val($("#DUserName").html())
+        $("#_Number1").val($("#DNumber1").html())
+        $("#_Number2").val($("#DNumber2").html())
+        $("#_company").val($("#Dcompany").html())
+        $("#_Remarks").val($("#DRemarks").html())
+
     $("#modifyLinkman").on("click", function() {
         var linkmanArr = [$("#UserName").val(), $("#Number1").val(), $("#Number2").val(), $("#company").val(), $("#Remarks").val()]
         console.log(linkmanArr) //修改某个联系人信息

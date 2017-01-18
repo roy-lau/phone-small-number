@@ -9,15 +9,15 @@
     <link rel="icon" href="img/title.jpg">
 </head>
 <style type="text/css">
-.ui-btn-icon-top,.ui-icon-user:after,
-.ui-btn-icon-top,.ui-icon-comment:after,
-.ui-btn-icon-top,.ui-icon-calendar:after,
-.ui-btn-icon-top,.ui-icon-clock:after,
-.ui-corner-all,.ui-icon-refresh:after,
-.ui-corner-all,.ui-icon-carat-l:after,
-.ui-corner-all,.ui-icon-delete:after{
-    background-color: rgba(47, 133, 230, 0.3);
-}
+    .ui-btn-icon-top,.ui-icon-user:after,
+    .ui-btn-icon-top,.ui-icon-comment:after,
+    .ui-btn-icon-top,.ui-icon-calendar:after,
+    .ui-btn-icon-top,.ui-icon-clock:after,
+    .ui-corner-all,.ui-icon-refresh:after,
+    .ui-corner-all,.ui-icon-carat-l:after,
+    .ui-corner-all,.ui-icon-delete:after{
+        background-color: rgba(47, 133, 230, 0.3);
+    }
 </style>
 
 <body>
@@ -301,19 +301,19 @@
             <form method="post" action="">
                 <div data-role="fieldcontain">
                     <label for="UserName">客户姓名：</label>
-                    <input type="text" name="UserName" id="UserName" required="required">
+                    <input type="text" name="UserName" id="_UserName" required="required">
                     <br>
                     <label for="Number1">电话1：</label>
-                    <input type="tel" name="Number1" id="Number1" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                    <input type="tel" name="Number1" id="_Number1" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                     <br>
                     <label for="Number2">电话2：</label>
-                    <input type="tel" name="Number2" id="Number2" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                    <input type="tel" name="Number2" id="_Number2" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                     <br>
                     <label for="company">公司姓名：</label>
-                    <input type="text" name="company" id="company" required="required">
+                    <input type="text" name="company" id="_company" required="required">
                     <br>
                     <label for="Remarks">备注：</label>
-                    <input type="text" name="Remarks" id="Remarks" required="required">
+                    <input type="text" name="Remarks" id="_Remarks" required="required">
                     <br>
                 </div>
             </form>
