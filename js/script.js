@@ -1,6 +1,5 @@
-var path;
 $(document).on("pageinit", "#Pagelogn", function() {
-    $("#logn").on("click", function() {
+    $("#logn").on("lcick", function() {
         var name = $('#userName').val();
         if (name) {
             $("#logn").prop("href", "#page1")
@@ -9,15 +8,16 @@ $(document).on("pageinit", "#Pagelogn", function() {
             $("#logn").prop("href", "")
             $("#logn").next().html("用户名密码不匹配！")
         }
-        switch (2) {
+
+        switch (1) {
             case 1:
-                path = "url1"
+                localStorage.path = "url1"
                 break;
             case 2:
-                path = "url2"
-                break;
+                localStorage.path = "url2"
+                break;  
             case 3:
-                path = "url3"
+                localStorage.path = "url3"
                 break;
             default:
         }
@@ -26,6 +26,7 @@ $(document).on("pageinit", "#Pagelogn", function() {
 
 $(document).on("pageinit", "#page1", function() {
     /******当有通话记录的时候显示数据，没有通话记录的时候显示“亲，您还没有通话记录哟！”*******/
+
     if (1 == 0) {
         $("#LatelyList").append("<p style='text-align: center;line-height: 10em'>亲，您还没有通话记录哟！</p>")
     } else {
@@ -63,11 +64,14 @@ $(document).on("pageinit", "#page2", function() {
         { "name": "user1", "tel": 171, "date": "2016-12-7" }, { "name": "user2", "tel": 155, "date": "2016-12-8" }, { "name": "user3", "tel": 169, "date": "2016-12-9" }
     ]
     $('#linkmanTitle').html("全部客户(" + obj.length + "个)：")
+    var htmldom = "";
     for (var i = 0; i < obj.length; i++) {
-        $('#linkmanTotal').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info'  href='#details'>" + "<h4 value=" + obj[i].tel + " >" + obj[i].name + "</h4>" + "<p>" + obj[i].tel + "</p>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
+        htmldom += "<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info'  href='#details'>" + "<h4 value=" + obj[i].tel + " >" + obj[i].name + "</h4>" + "<p>" + obj[i].tel + "</p>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>"
     }
+    $('#linkmanTotal').html(htmldom)
+
     $("[href=#details]").on('click', function() {
-        alert($(this).find("p").html())
+        localStorage.tel = $(this).find("p").html()
     })
 });
 
@@ -81,8 +85,8 @@ $(document).on("pageinit", "#page3", function() {
     });
     $("#TelBtn").on("click", function() {
         $(this).prop("href", "wtai://wp/mc;" + EditPhone.innerHTML) || $(this).prop("href", "tel:" + EditPhone.innerHTML);
-        // EditPhone.innerHTML = ""
-        // alert(path)
+        EditPhone.innerHTML = ""
+        alert(localStorage.path)
     });
 
     $("#Toggle").on("click", function() {
@@ -122,8 +126,8 @@ $(document).on("pageinit", "#linkmanList", function() {
 $(document).on("pageinit", "#details", function() {
     $("#DList").show()
     $("#RecordList").hide()
-
-    $("#DUserName").html("123---------")
+    alert
+    $("#DUserName").html("三三三三三三三三三三")
     $("#DNumber1").html()
     $("#DNumber2").html()
     $("#Dcompany").html()
@@ -154,21 +158,14 @@ $(document).on("pageinit", "#details", function() {
     $("#Dtel").on("click", function() {
         $(this).prop("href", "wtai://wp/mc;" + $("#DNumber1").html()) || $(this).prop("href", "tel:" + $("#DNumber1").html());
     })
-   // $("[href=#modify]").on("click", function() {
-   //      $("#UuserName").val($("#DUserName").html())
-   //      $("#Number1").val($("#DNumber1").html())
-   //      $("#Number2").val($("#DNumber2").html())
-   //      $("#company").val($("#Dcompany").html())
-   //      $("#Remarks").val($("#DRemarks").html())
-   //  })
 });
 
-$(document).on("pageinit", "#modify", function() {
-        $("#_UserName").val($("#DUserName").html())
-        $("#_Number1").val($("#DNumber1").html())
-        $("#_Number2").val($("#DNumber2").html())
-        $("#_company").val($("#Dcompany").html())
-        $("#_Remarks").val($("#DRemarks").html())
+$(document).on("pageshow", "#modify", function() {
+    $("#_UserName").val($("#DUserName").html())
+    $("#_Number1").val($("#DNumber1").html())
+    $("#_Number2").val($("#DNumber2").html())
+    $("#_company").val($("#Dcompany").html())
+    $("#_Remarks").val($("#DRemarks").html())
 
     $("#modifyLinkman").on("click", function() {
         var linkmanArr = [$("#UserName").val(), $("#Number1").val(), $("#Number2").val(), $("#company").val(), $("#Remarks").val()]
