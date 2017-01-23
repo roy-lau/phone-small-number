@@ -4,20 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/title.jpg">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/title.jpg">
+	<link rel="apple-touch-icon-precomposed" href="img/title.jpg">
+	<link rel="shortcut icon" href="img/title.jpg">
     <title>小号</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
     <link rel="icon" href="img/title.jpg">
 </head>
 <style type="text/css">
-    .ui-btn-icon-top,.ui-icon-user:after,
-    .ui-btn-icon-top,.ui-icon-comment:after,
-    .ui-btn-icon-top,.ui-icon-calendar:after,
-    .ui-btn-icon-top,.ui-icon-clock:after,
-    .ui-corner-all,.ui-icon-refresh:after,
-    .ui-corner-all,.ui-icon-carat-l:after,
-    .ui-corner-all,.ui-icon-delete:after{
-        background-color: rgba(47, 133, 230, 0.3);
-    }
+.ui-btn-icon-top,
+.ui-icon-user:after,
+.ui-btn-icon-top,
+.ui-icon-comment:after,
+.ui-btn-icon-top,
+.ui-icon-calendar:after,
+.ui-btn-icon-top,
+.ui-icon-clock:after,
+.ui-corner-all,
+.ui-icon-refresh:after,
+.ui-corner-all,
+.ui-icon-carat-l:after,
+.ui-corner-all,
+.ui-icon-delete:after {
+    background-color: rgba(47, 133, 230, 0.3);
+}
 </style>
 
 <body>
@@ -31,6 +42,7 @@
             <a href="#" data-transition="slideup" class="ui-btn ui-corner-all" style="background-color: #13B8F5;color: white;font-weight: 100;border-radius: 20px;" id="logn">登陆</a>
             <span style="color: red;"></span>
         </form>
+
     </div>
     <div data-role="page" id="page1">
         <div data-role="header">
@@ -172,7 +184,7 @@
             <h3>个人设置</h3>
         </div>
         <div data-role="main">
-            <ul data-role="listview"    >
+            <ul data-role="listview">
                 <li data-icon=""><a href="">本机号码 <span class='ui-li-count' id="machine">1888888888888888</span></a></li>
                 <li data-icon=""><a href="#reset">修改密码</a></li>
                 <br>
@@ -181,7 +193,6 @@
                     <img src="img/QRcode.png">
                 </div>
             </ul>
-         
             <a href="#Pagelogn" class="ui-btn ui-corner-all" style="background-color:#C30023;color:white;padding:10px;" data-transition="slidedown">切换账号</a>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -338,13 +349,13 @@
     </div>
 </body>
 <script type="text/javascript">
-    function keyboard(tt) {
-        var EditPhone = document.getElementById('EditPhone')
-        EditPhone.innerHTML += tt.innerHTML
-        if (EditPhone.innerHTML.length <= 11) {} else {
+function keyboard(tt) {
+    var EditPhone = document.getElementById('EditPhone')
+    EditPhone.innerHTML += tt.innerHTML
+    if (EditPhone.innerHTML.length <= 11) {} else {
         alert("输入号码超出的长度")
-        }
     }
+}
 </script>
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
