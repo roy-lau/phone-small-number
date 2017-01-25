@@ -1,6 +1,7 @@
 $(document).on("pageinit", "#Pagelogn", function() {
     $("#logn").on("lcick", function() {
         var name = $('#userName').val();
+        alert(name)
         if (name) {
             $("#logn").prop("href", "#page1")
             $("#logn").next().html("")
@@ -8,7 +9,6 @@ $(document).on("pageinit", "#Pagelogn", function() {
             $("#logn").prop("href", "")
             $("#logn").next().html("用户名密码不匹配！")
         }
-
         switch (1) {
             case 1:
                 localStorage.path = "url1"
