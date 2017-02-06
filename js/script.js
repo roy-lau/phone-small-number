@@ -2,6 +2,7 @@ $(document).on("pageinit", "#Pagelogn", function() {
     $("#logn").on("lcick", function() {
         var name = $('#userName').val();
         alert(name)
+
         if (name) {
             $("#logn").prop("href", "#page1")
             $("#logn").next().html("")
@@ -36,9 +37,14 @@ $(document).on("pageinit", "#page1", function() {
             { "name": "user1", "tel": 171, "date": "2016-12-7" }, { "name": "user2", "tel": 155, "date": "2016-12-8" }, { "name": "user3", "tel": 169, "date": "2016-12-9" }
         ]
         for (var i = 0; i < obj.length; i++) {
-            $('#LatelyList').append("<li data-icon='info' class='ui-last-child'>" + "<a class='ui-btn ui-btn-icon-right ui-icon-info' id='linkClick' href=''>" + "<h4>" + obj[i].name + "</h4>" + "<p>" + obj[i].tel + "</p>" + "<span class='ui-li-count'>" + obj[i].date + "</span>" + "</a>" + "</li>")
+            $('#LatelyList').append("<li data-icon='info' class='ui-last-child'>" 
+                + "<a class='ui-btn ui-btn-icon-right ui-icon-info linkClick' href=''>" 
+                + "<h4>" + obj[i].name + "</h4>" 
+                + "<p>" + obj[i].tel + "</p>" 
+                + "<span class='ui-li-count'>" + obj[i].date + "</span>" 
+                + "</a>" + "</li>")
         }
-        $("#linkClick").on("click", function() {
+        $(".linkClick").on("click", function() {
             alert($(this).find("p").html())
             $(this).prop("href", "wtai://wp/mc;" + $(this).find("p").html()) || $(this).prop("href", "tel:" + $(this).find("p").html());
         });
