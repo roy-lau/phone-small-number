@@ -1,10 +1,9 @@
 $(document).on("pageinit", "#Pagelogn", function() {
-    $("#logn").on("lcick", function() {
+    $("#logn").on("click", function() {
         var name = $('#userName').val();
-        alert(name)
-
-        if (name) {
-            $("#logn").prop("href", "#page1")
+        var password = $('#password').val();
+       if (name) {
+            $("#logn").attr("href", "#page1")
             $("#logn").next().html("")
         } else {
             $("#logn").prop("href", "")
