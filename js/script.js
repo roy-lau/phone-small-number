@@ -90,7 +90,7 @@ $(document).on("pageinit", "#page3", function() {
     });
     $("#TelBtn").on("click", function() {
         $(this).prop("href", "wtai://wp/mc;" + EditPhone.innerHTML) || $(this).prop("href", "tel:" + EditPhone.innerHTML);
-        EditPhone.innerHTML = ""
+        //EditPhone.innerHTML = ""
         //alert(localStorage.path)
     });
 
