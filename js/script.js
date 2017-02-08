@@ -89,7 +89,7 @@ $(document).on("pageinit", "#page3", function() {
         $(this).attr("href", "sms:" + EditPhone.innerHTML + "&body=" + EditPhone.innerHTML);
     });
     $("#TelBtn").on("click", function() {
-        $(this).prop("href", "tel:" + EditPhone.innerHTML) || $(this).prop("href", "wtai://wp/mc;" + EditPhone.innerHTML)
+        $(this).prop("href", "wtai://wp/mc;" + EditPhone.innerHTML) || $(this).prop("href", "tel:" + EditPhone.innerHTML)
             
         EditPhone.innerHTML = ""
         //alert(localStorage.path)
