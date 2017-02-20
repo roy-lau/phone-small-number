@@ -1,42 +1,40 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>  
+
+<%  
+    String path = request.getContextPath();  
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/"; 
+    
+%>  
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/title.jpg">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/title.jpg">
 	<link rel="apple-touch-icon-precomposed" href="img/title.jpg">
 	<link rel="shortcut icon" href="img/title.jpg">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>小号</title>
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
-    <link rel="icon" href="img/title.jpg">
+    <link rel="stylesheet" type="text/css" href="<%=path%>/css/jquery.mobile-1.4.5.css">
+    <link rel="icon" href="<%=path%>/img/title.jpg">
 </head>
 <style type="text/css">
-	.ui-btn-icon-top,
-	.ui-icon-user:after,
-	.ui-btn-icon-top,
-	.ui-icon-comment:after,
-	.ui-btn-icon-top,
-	.ui-icon-calendar:after,
-	.ui-btn-icon-top,
-	.ui-icon-clock:after,
-	.ui-corner-all,
-	.ui-icon-refresh:after,
-	.ui-corner-all,
-	.ui-icon-carat-l:after,
-	.ui-corner-all,
-	.ui-icon-delete:after {
-	    background-color: rgba(47, 133, 230, 0.3);
-	}
+.ui-btn-icon-top,.ui-icon-user:after,
+.ui-btn-icon-top,.ui-icon-comment:after,
+.ui-btn-icon-top,.ui-icon-calendar:after,
+.ui-btn-icon-top,.ui-icon-clock:after,
+.ui-corner-all,.ui-icon-refresh:after,
+.ui-corner-all,.ui-icon-carat-l:after,
+.ui-corner-all,.ui-icon-delete:after{
+    background-color: rgba(47, 133, 230, 0.3);
+}
 </style>
-
 <body>
     <div data-role="page" id="Pagelogn">
         <form class="ui-content">
             <img src="img/logn.png">
             <br>
-            <input data-clear-btn="true" name="text" id="userName" value="" placeholder="账号" type="text" 
-            onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="11">
+            <input data-clear-btn="true" name="text" id="userName" value="" placeholder="账号" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="11">
             <input data-clear-btn="true" name="password" id="password" value="" autocomplete="off" placeholder="密码" type="password" maxlength="16">
             <br>
             <a href="#" data-transition="slideup" class="ui-btn ui-corner-all" style="background-color: #13B8F5;color: white;font-weight: 100;border-radius: 20px;" id="logn">登陆</a>
@@ -51,6 +49,7 @@
             <div data-role="content">
                 <ul data-role="listview" data-filter="true" id="LatelyList" data-filter-placeholder="搜索号码 ...">
                     <!-- 亲，您还没有通话记录哟！ -->
+ 
                 </ul>
             </div>
         </div>
@@ -130,24 +129,24 @@
                 </ul>
                 <div class="keyboards">
                     <ul>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">1</a></li>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">2</a></li>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">3</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">1</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">2</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">3</a></li>
                     </ul>
                     <ul>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">4</a></li>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">5</a></li>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">6</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">4</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">5</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">6</a></li>
                     </ul>
                     <ul>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">7</a></li>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">8</a></li>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">9</a></li>
-                    </ul>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">7</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">8</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">9</a></li>
+                    </ul> 
                     <ul>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">*</a></li>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">0</a></li>
-                        <li><a onclick="keyboard(this)" style="font-size: 1.1em" href="">#</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">*</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">0</a></li>
+                        <li><a onclick="keyboard(this)" style="font-size: 1.3em" href="">#</a></li>
                     </ul>
                 </div>
                 <ul>
@@ -184,14 +183,14 @@
         </div>
         <div data-role="main">
             <ul data-role="listview">
-                <li data-icon=""><a href="">本机号码 <span class='ui-li-count' id="machine">1888888888888888</span></a></li>
+                <li data-icon=""><a href="">本机号码 <span class='ui-li-count' id="userNo"></span></a></li>
                 <li data-icon=""><a href="#reset">修改密码</a></li>
-                <br>
                 <div data-role="collapsible">
                     <h4>推荐给朋友</h4>
                     <img src="img/QRcode.png">
                 </div>
             </ul>
+            <br />
             <a href="#Pagelogn" class="ui-btn ui-corner-all" style="background-color:#C30023;color:white;padding:10px;" data-transition="slidedown">切换账号</a>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -275,20 +274,21 @@
                     <li><span>客户编号：</span> <span id="DUserID"></span></li>
                     <li><span>客户姓名：</span> <span id="DUserName"></span></li>
                     <li><span>电话1：</span> <span id="DNumber1"></span>
-                        <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
-                            <a href="" class="ui-btn ui-corner-all ui-btn-inline" id="Dtel">拨号</a>
-                            <a href="" class="ui-btn ui-corner-all ui-btn-inline" id="Dsms">短信</a>
-                        </div>
-                        <br>
-                        <br>
+   					<div data-role="controlgroup" data-type="horizontal"  class="ui-btn-right">
+        				<a href="" class="ui-btn ui-corner-all ui-btn-inline" id="Dtel">拨号</a>
+        				<a href="" class="ui-btn ui-corner-all ui-btn-inline" id="Dsms">短信</a>
+        			</div>
+        			<br>
+        			<br>
                     </li>
                     <li><span>电话2：</span> <span id="DNumber2"></span></li>
                     <li><span>公司名称：</span> <span id="Dcompany"></span></li>
                     <li><span>备注：</span> <span id="DRemarks"></span></li>
                 </ul>
-                <ul data-role="listview" id="RecordList">
+                    <ul data-role="listview" id="RecordList">
                     <!-- 联系记录 -->
-                </ul>
+                    
+                    </ul>
             </div>
         </div>
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -311,19 +311,19 @@
             <form method="post" action="">
                 <div data-role="fieldcontain">
                     <label for="UserName">客户姓名：</label>
-                    <input type="text" name="UserName" id="_UserName" required="required">
+                    <input type="text" name="UserName" id="MUserName" required="required">
                     <br>
                     <label for="Number1">电话1：</label>
-                    <input type="tel" name="Number1" id="_Number1" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                    <input type="tel" name="Number1" id="MNumber1" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                     <br>
                     <label for="Number2">电话2：</label>
-                    <input type="tel" name="Number2" id="_Number2" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                    <input type="tel" name="Number2" id="MNumber2" required="required" maxlength="11" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                     <br>
                     <label for="company">公司姓名：</label>
-                    <input type="text" name="company" id="_company" required="required">
+                    <input type="text" name="company" id="Mcompany" required="required">
                     <br>
                     <label for="Remarks">备注：</label>
-                    <input type="text" name="Remarks" id="_Remarks" required="required">
+                    <input type="text" name="Remarks" id="MRemarks" required="required">
                     <br>
                 </div>
             </form>
@@ -338,8 +338,9 @@
             <form method="post" action="">
                 <div data-role="fieldcontain">
                     <label for="newPwd">新密码：</label>
-                    <input type="tel" name="newPwd" id="newPwd" required="required" maxlength="16" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
+                    <input type="password" name="newPwd" id="newPwd" required="required" maxlength="16" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                     <label for="oldPwd">确认密码：</label>
+                    <input type="password" name="oldPwd" style="display:none">
                     <input type="password" name="oldPwd" id="oldPwd" required="required" maxlength="16" onkeyup="this.value=this.value.replace(/\W\S/g,'')">
                 </div>
                 <a href="#" id="submit" class="ui-btn ui-corner-all">确认修改</a>
@@ -352,11 +353,12 @@ function keyboard(tt) {
     var EditPhone = document.getElementById('EditPhone')
     EditPhone.innerHTML += tt.innerHTML
     if (EditPhone.innerHTML.length <= 11) {} else {
-        alert("输入号码超出的长度")
+        alert("输入号码有误");
     }
 }
 </script>
-<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="<%=path%>/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="<%=path%>/js/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript" src="<%=path%>/js/script.js"></script>
+
 </html>
